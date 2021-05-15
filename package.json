@@ -1,0 +1,16 @@
+{
+  "name": "hankerrank-problem-sets",
+  "version": "1.0.0",
+  "description": "problems from hacker rank for interview prep & learning",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "hackerrank",
+    "interview",
+    "prep"
+  ],
+  "author": "torey littlefield",
+  "license": "ISC"
+}
