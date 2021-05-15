@@ -45,7 +45,9 @@ const arr = [
 
 function hourglassSum(arr) {
     // Print the largest (maximum) hourglass sum found in arr a (6 x 6) array.
-    let maximumHourglassSum = Int = -Infinity;
+
+    let maximumHourglassSum = Int = -Infinity; // the result can be less than 0;
+
     // 1. arr is a 2D arr, so has properties arr[col] & arr[col][row]
     // 2. each hourglass is made up of 3 rows
     // 3. each hourglass is made of 3 cols with outside cols have 2 values, middle col 3 values
@@ -67,6 +69,7 @@ function hourglassSum(arr) {
             // middle of hourglass
             currentSum += arr[col + 1][row + 1];
 
+            // check & compare for max sum
             if(currentSum > maximumHourglassSum) {
                 maximumHourglassSum = currentSum;
             };
