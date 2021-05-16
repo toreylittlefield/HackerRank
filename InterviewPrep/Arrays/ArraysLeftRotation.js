@@ -36,13 +36,10 @@ function rotLeft(a, d) {
     * 3. following the logic of point 1. above, the array a cannot be left rotated more than n so we can use splice(0, d)
     * 4. add the elements of the splice array to the tail of the array a using push / spread operator
     */ 
-//    let splicedArrayToRotate = a.splice(0,d);
-//    a.push(...splicedArrayToRotate);
-//    // return the rotated array a
-//    return a;
-    const splicedArray = a.splice(0, d);
-    a.push(...splicedArray);
-    return a;
+   let splicedArrayToRotate = a.splice(0,d);
+   a.push(...splicedArrayToRotate);
+   // return the rotated array a
+   return a;
 };
 
-console.log(rotLeft(a,d))
+rotLeft(a,d)
