@@ -101,7 +101,6 @@ function arrayManipulation(n, queries) {
         // instead represent each element between the bounds with the valToAdd
         // this basically represents a "sum" for the range
         // in order to find the max value we will iterate over the array and add the values from the sums for each element(this comes later)
-            console.log(array)
             if(upperBound < array.length) {
                 array[upperBound] -= valToAdd;
             };
@@ -109,7 +108,6 @@ function arrayManipulation(n, queries) {
     });
 
     // loop over array adding the sum as we go for each element and track maxValue
-    console.log(array)
     array.forEach(value => {
         runningSum += value;
         maxValue = Math.max(runningSum, maxValue)
