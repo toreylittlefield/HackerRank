@@ -68,7 +68,7 @@ function minimumBribes(q) {
             break;
         } else {
             // loop from the currentValue - 2 to the index of the currentPosition
-            for(let j = Math.max(0, currentValue - 2); j < currentPosition; j++ ) {
+            for(let j = Math.max(currentValue - 2); j < currentPosition; j++ ) {
                 // compare and if the value of q[j] is larger than the current value add to bribeTotal
                 if(q[j] > currentValue) {
                     bribeTotal++;
