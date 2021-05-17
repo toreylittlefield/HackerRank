@@ -95,8 +95,6 @@ function minimumSwaps(arr) {
 
             // add a swap to the total
             minNumSwaps++;
-
-            console.log(arr)
         };
     };
     // return minNumSwaps
