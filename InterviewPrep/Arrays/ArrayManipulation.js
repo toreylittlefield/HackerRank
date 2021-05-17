@@ -39,10 +39,51 @@ The largest value is 10  after all operations are performed.
 */
 
 // Input
+// const n = 10;
+// const queries = [[1,5,3], [4,8,7], [6,9,1]];
+
+// Test 2
+const n = 5;
+const queries = [[1, 2, 100], [2, 5, 100], [3, 4, 100]];
 
 
 function arrayManipulation(n, queries) {
+    // 1. n is not less than 3
+    // 2. k is not less than 0 (non-negative)
+    // 3. return a maxValue variable init a 0
 
-}
+    let maxValue = 0;
+    let previousMax = 0;
+
+    // create 0 array & fill
+    let array = new Array(n).fill(0);
+
+    // map over queries & update array
+    queries.map( el => {
+        const [a, b, c] = el;
+
+        // loop over array starting at a - 1 and ending at b - 1 & add c at current index
+        const upperBound = b - 1;
+        for (let index = a - 1; index <= upperBound; index++) {
+            array[index] += c;
+            // compare previousMax value
+            if(array[index] > previousMax) {
+                previousMax = array[index];
+            };
+        };
+
+        // for each iter check / compare max values
+        if(previousMax > maxValue) {
+            maxValue = previousMax;
+        };
+        
+    });
+
+    // return
+    return maxValue
+};
 
 console.log(arrayManipulation(n, queries));
+
+// expected Output
+// 10
