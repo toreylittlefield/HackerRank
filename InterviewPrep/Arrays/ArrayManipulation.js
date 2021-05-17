@@ -46,6 +46,42 @@ The largest value is 10  after all operations are performed.
 const n = 5;
 const queries = [[1, 2, 100], [2, 5, 100], [3, 4, 100]];
 
+// -------------- O(n^2) Solution ---------------
+// function arrayManipulation(n, queries) {
+//     // 1. n is not less than 3
+//     // 2. k is not less than 0 (non-negative)
+//     // 3. return a maxValue variable init a 0
+
+//     let maxValue = 0;
+//     let previousMax = 0;
+
+//     // create 0 array & fill
+//     let array = new Array(n).fill(0);
+
+//     // map over queries & update array
+//     queries.map( el => {
+//         const [a, b, c] = el;
+
+//         // loop over array starting at a - 1 and ending at b - 1 & add c at current index
+//         const upperBound = b - 1;
+//         for (let index = a - 1; index <= upperBound; index++) {
+//             array[index] += c;
+//             // compare previousMax value
+//             if(array[index] > previousMax) {
+//                 previousMax = array[index];
+//             };
+//         };
+
+//         // for each iter check / compare max values
+//         if(previousMax > maxValue) {
+//             maxValue = previousMax;
+//         };
+
+//     });
+
+//     // return
+//     return maxValue
+// };
 
 function arrayManipulation(n, queries) {
     // 1. n is not less than 3
@@ -53,32 +89,31 @@ function arrayManipulation(n, queries) {
     // 3. return a maxValue variable init a 0
 
     let maxValue = 0;
-    let previousMax = 0;
+    let runningSum = 0;
 
     // create 0 array & fill
     let array = new Array(n).fill(0);
 
-    // map over queries & update array
-    queries.map( el => {
-        const [a, b, c] = el;
-
-        // loop over array starting at a - 1 and ending at b - 1 & add c at current index
-        const upperBound = b - 1;
-        for (let index = a - 1; index <= upperBound; index++) {
-            array[index] += c;
-            // compare previousMax value
-            if(array[index] > previousMax) {
-                previousMax = array[index];
+    // iterate over queries & create a "range" that represents the values for that range
+    queries.forEach((operation) => {
+        let [lowerBound, upperBound, valToAdd] = operation;
+        // the trick is to NOT iterate over each element in operation adding valToAdd (or c)
+        // instead represent each element between the bounds with the valToAdd
+        // this basically represents a "sum" for the range
+        // in order to find the max value we will iterate over the array and add the values from the sums for each element(this comes later)
+            console.log(array)
+            if(upperBound < array.length) {
+                array[upperBound] -= valToAdd;
             };
-        };
-
-        // for each iter check / compare max values
-        if(previousMax > maxValue) {
-            maxValue = previousMax;
-        };
-        
+            array[lowerBound - 1] += valToAdd;
     });
 
+    // loop over array adding the sum as we go for each element and track maxValue
+    console.log(array)
+    array.forEach(value => {
+        runningSum += value;
+        maxValue = Math.max(runningSum, maxValue)
+    })
     // return
     return maxValue
 };
