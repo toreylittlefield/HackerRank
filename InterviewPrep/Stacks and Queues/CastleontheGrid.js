@@ -24,18 +24,25 @@
 */
 
 // Input:
-const grid = [ ['.','X','.'], 
-               ['.','X','.'],
-               ['.','.','.'] ];
+// const grid = [ ['.','X','.'], 
+//                ['.','X','.'],
+//                ['.','.','.'] ];
 
-const startX = 0;
+// const startX = 0;
+// const startY = 0;
+// const goalX = 0;
+// const goalY = 2; // expected 3 moves
+
+const grid = [ ['.','.','.'],
+               ['.','X','.'],
+               ['.','X','.']];
+const startX = 2;
 const startY = 0;
 const goalX = 0;
-const goalY = 2;
+const goalY = 2; // expected 2 moves
 
 function minimumMoves(grid, startX, startY, goalX, goalY) {
     // Write your code here
-    console.log(grid, startX, startY, goalX, goalY)
 
     // create Queues class object
     class Queues {
@@ -71,7 +78,7 @@ function minimumMoves(grid, startX, startY, goalX, goalY) {
         }
 
         checkVisited(yPos, xPos) {
-            if(this.visited[yPos] && this.visited[yPos][xPos].visited) {
+            if(this.visited[yPos] && this.visited[yPos][xPos]) {
                 return false;
             };
             return true;
@@ -100,8 +107,13 @@ function minimumMoves(grid, startX, startY, goalX, goalY) {
     // enqueue starting position
     queues.enqueue(startY, startX);
 
+    const gridTotal = grid.length * grid[0].length;
+
     // loop through queue and check neighbors
     while(!queues.isEmpty()) {
+        // number of moves cannot exceed the grid total
+        if(queues.checkMoves() > gridTotal + 1) break;
+
         const [yPos, xPos] = queues.dequeue();
 
         // check if position is the goal position
@@ -113,6 +125,7 @@ function minimumMoves(grid, startX, startY, goalX, goalY) {
         // loop through other nodes
         exploreNeighborNodes(yPos, xPos, queues);
     }
+    console.log(queues)
 
     return queues.checkMoves();
 
