@@ -20,12 +20,10 @@ function isBalanced(s) {
     let isBalanced;
 
     // logic
-    // 1. take left from array and peek stack if match remove & pop
-    // 1. take left from array and check right-end from array if match remove
-    // 2. else check left from array against next from array if match remove
-    // 3. else if no match push left from array then next from array to stack
-    // 4. repeat until array is empty
-    // 5. when array is empty check if stack is empty if true then return 'YES' else 'NO'
+    // 1. Edge case checks: s.length even || s[0] is reversed / negative if so return 'NO
+    // 2. take left from array and peek stack if match remove & pop else push to stack
+    // 3. repeat until array is empty
+    // 4. when array is empty check if stack is empty if true then return 'YES' else 'NO'
 
     // if s is odd not balanced
     if(s.length % 2 === 1) {
@@ -58,7 +56,7 @@ function isBalanced(s) {
         // peek the stack
         const peek = stack[stack.length - 1];
 
-        // if current is -, should close with + from peek / match if not rejct with NO
+        // if current is -, should close with + from peek / match
         if(peek > 0 && currentNum < 0 && peek + currentNum === 0) {
             stack.pop()
         } else {
