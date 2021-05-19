@@ -6,7 +6,17 @@
  */
 
 // Input: The first line contains a single integer, q, the number of queries.
-const q = [[1, 42], [2,''], [1, 14], [3,''], [1, 28], [3,''], [1, 60], [1, 78], [2,''], [2,'']];
+const input = `10
+1 42
+2
+1 14
+3
+1 28
+3
+1 60
+1 78
+2
+2`;
 // Steps:
 // 1. if 1, then enqueue (push)
 // 2. if 2, then dequeue (shift)
@@ -17,6 +27,8 @@ const q = [[1, 42], [2,''], [1, 14], [3,''], [1, 28], [3,''], [1, 60], [1, 78], 
 
 function processData(input) {
     //Enter your code here
+    const inputArray = input.split("\n");
+    console.log(inputArray)
 };
 
 console.log(processData(input))
