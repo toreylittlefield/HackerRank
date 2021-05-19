@@ -5,18 +5,18 @@
  *
  */
 
+const Query = require("airtable/lib/query");
+
 // Input: The first line contains a single integer, q, the number of queries.
-const input = `10
-1 42
-2
-1 14
+const input = `8
+1 15
+1 17
 3
-1 28
-3
-1 60
-1 78
+1 25
 2
-2`;
+3
+2
+3`;
 // Steps:
 // 1. if 1, then enqueue (push)
 // 2. if 2, then dequeue (shift)
@@ -28,7 +28,58 @@ const input = `10
 function processData(input) {
     //Enter your code here
     const inputArray = input.split("\n");
-    console.log(inputArray)
+
+    // first element is n, the length of the input string]
+    const length = inputArray.shift();
+
+    class Queue {
+        constructor() {
+            this.fifoStack = [];
+            this.result = '';
+        }
+
+        enqueue(data) {
+            this.fifoStack.push(data);
+        }
+
+        dequeue() {
+            return this.fifoStack.shift();
+        }
+
+        peek() {
+            if(!this.fifoStack.length) return null;
+            return this.fifoStack[0];
+        }
+
+        addResult(data) {
+            this.result += data;
+        }
+
+        result() {
+            return this.result;
+        }
+
+    }
+
+    const queue = new Queue();
+
+    inputArray.forEach(data => {
+        let [int, value] = data.split(' ');
+        int = Number(int);
+         switch(int) {
+            case 1:
+                queue.enqueue(value);
+                break;
+            case 2:
+                queue.dequeue();
+                break;
+            case 3:
+                const result = queue.peek();
+                queue.addResult(`${result} \n` );
+                break;
+         };
+    });
+    console.log(queue.result);
 };
 
 console.log(processData(input))
