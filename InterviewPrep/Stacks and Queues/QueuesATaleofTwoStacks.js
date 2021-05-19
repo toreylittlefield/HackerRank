@@ -5,8 +5,6 @@
  *
  */
 
-const Query = require("airtable/lib/query");
-
 // Input: The first line contains a single integer, q, the number of queries.
 const input = `8
 1 15
