@@ -33,6 +33,36 @@ const goalY = 2;
 function minimumMoves(grid, startX, startY, goalX, goalY) {
     // Write your code here
     console.log(grid, startX, startY, goalX, goalY)
+
+    // Create|Init a queue for each dimension x, y
+    class Queues {
+        constructor() {
+            this.xQueue = [];
+            this.yQueue = [];
+        }
+
+        enqueue(xPos, yPos) {
+            this.xQueue.push(xPos);
+            this.yQueue.push(yPos);
+        }
+
+        dequeue() {
+            this.xQueue.shift();
+            this.yQueue.shift();
+        }
+
+        peek() {
+            if(!this.xQueue.length) return;
+            return [this.xQueue[0], this.yQueue[0]];
+        }
+    };
+
+    const queues = new Queues();
+
+
+    const exploreNeighborNodes = () => {
+
+    };
 }
 
 console.log(minimumMoves(grid, startX, startY, goalX, goalY))
