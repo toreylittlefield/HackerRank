@@ -4,7 +4,7 @@
  * Difficulty: Medium
  *
  *
- * Objective: Given a grid, a start and a goal, determine the minmum number of moves to get to the goal.
+ * Objective: Given a grid, a start and a goal, determine the minmum number oftotalMoves to get to the goal.
  * --------------------
  * Function Description
  * --------------------
@@ -20,7 +20,7 @@
  * -------
  * Returns
  * -------
- * int: the minimum moves to reach the goal
+ * int: the minimumtotalMoves to reach the goal
 */
 
 // Input:
@@ -31,131 +31,114 @@
 // const startX = 0;
 // const startY = 0;
 // const goalX = 0;
-// const goalY = 2; // expected 3 moves
+// const goalY = 2; // expected 3totalMoves
 
 // const grid = [ ['.','.','.'],
 //                ['.','X','.'],
 //                ['.','X','.']];
 
-// starting [0,0,2,2] expected 3
-// const grid = [ '...', '.X.', '.X.' ] // expected 3
+// starting [2,0,2,2] expected 2
+// const grid = [ 
+//     '...', 
+//     '.X.', 
+//     '.X.' ] // expected 3
 
 // starting [2,0,0,2] expected 2
-const grid = ['...' , '.X.', '.X.'];
+// const grid = ['...' , '.X.', '.X.'];
+// starting 9 1 9 6 expected 3
+const grid = [
+'.X..XX...X',
+'X.........',
+'.X.......X',
+'..........',
+'........X.',
+'.X...XXX..',
+'.....X..XX',
+'.....X.X..',
+'..........'
+,'.....X..XX']
 
-const startX = 2;
-const startY = 0;
-const goalX = 0;
-const goalY = 2; // expected 3 moves
+const startX = 9;
+const startY = 1;
+const goalX = 9;
+const goalY = 6; // expected 3totalMoves
 
-function minimumMoves(grid, startRow, startCol, goalRow, goalCol) {
-    
-    // create the 2D matrix/ grid
-    grid = grid.map(col => Array.from(col).map(row => row));
+function minimumMoves(grid, startX, startY, goalX, goalY) {
 
-    //helper to visualize start, goal, and barriers
-    console.log(grid.map((col, j) => col.map((row,i) => {
-        if(j === goalCol && i === goalRow) {
-            return 'GOAL'
-        } else if(j === startCol && i === startRow) {
-            return 'ENTER'
-        } else if(row === 'X') {
-            return 'X'
+    // for the first node and queue
+    const startNode = {
+        position: { xPos: startX, yPos: startY },
+        totalMoves: 0,
+        parentNode: null
+    };
+
+    // start enqueue
+    const queue = [];
+    queue.push(startNode);
+
+    // MAP FOR VISITED NODES
+    const visited = {};
+    visited[`${startX}${startY}`] = true;
+
+    // check if node has been visited or is blocked else create a new node
+    const visitedNodes = (xPos, yPos, totalMoves, parentNode) => {
+
+        // create by position
+        const key = `${xPos}${yPos}`;
+
+        // return if blocked or visited
+        if (grid[xPos][yPos] === 'X' || visited[key] ) return null;
+
+        // update node to visited
+        visited[key] = true;
+
+        // create a new node for this position
+        const newNode = {
+            position: { xPos, yPos },
+            totalMoves,
+            parentNode
         };
-        return '.'
-    })))
 
-    let numRows = grid[0].length;
-    let numCols = grid.length;
+        // enqueue new node
+        queue.push(newNode);
+        return newNode;
+    };
 
-    // grid matrix
-    let matrixTotal = numCols * numRows;
-
-    // queues for rows and cols to enqueue / dequeue
-    let rowQueue = [], colQueue = [];
-
-    // track moves & nodes
-    let totalMoves = 0;
-    let nodesInLayerCount = 1;
-    let nodesInNextLayerCount = 0;
-
-    // the goal variable to end the search
-    let goalFound = false;
-
-    // create a visited array & use to track visited nodes: default to false
-    let visited = grid.map(col => col.map(row => false));
-
-    // direction vectors for grid / movement
-    let rowVector = [-1, +1, 0, 0];
-    let colVector = [0, 0, -1, +1];
-
-    // starting
-    rowQueue.push(startRow);
-    colQueue.push(startCol);
-
-    // make visited
-    visited[startRow][startCol] = true ;
-
-    // loop over queue
-    while(rowQueue.length !== 0) {
-
-        // base case to prevent infin. loop
-        if(totalMoves > matrixTotal) return totalMoves = -1;
+    // loop through queue
+    while (queue.length > 0) {
 
         // dequeue
-        const row = rowQueue.shift();
-        const col = colQueue.shift();
+        const currentNode = queue.shift();
 
-        // compare & goalFound
-        if(row === goalRow && col === goalCol) {
-            goalFound = true;
-            visited[row][col] = true;
-            break;
+        // end the loop if goal found
+        if (currentNode.position.xPos === goalX && currentNode.position.yPos === goalY) {
+            return currentNode.totalMoves;
         };
 
-        // search for neighboring nodes
-        exploreNeighborNodes(row, col);
+        // get the currentNode and move count
+        const { position, totalMoves: currentTotal } = currentNode;
+        const totalMoves = currentTotal + 1;
 
-        // increment nodes & total moves
-        nodesInLayerCount--;
-        if(nodesInLayerCount === 0) {
-            nodesInLayerCount = nodesInNextLayerCount;
-            nodesInNextLayerCount = 0;
-            totalMoves++;
+        // LEFT OF NODE
+        for (let y = position.yPos- 1; y >= 0; y--) {
+            if (!visitedNodes(position.xPos, y, totalMoves, currentNode)) break
         };
-
-    };
-
-    
-    console.log(visited)
-    // return the totalMoves
-    if(goalFound) {
-        return totalMoves;
-    };
-    return totalMoves;
-
-    function exploreNeighborNodes(row, col) {
-        // should be modified BFS such that it only only breaks when out of bounds/range or hits an 'X' barrier
-        for (let index = 0; index < 4; index++) {
-            const currentRow = row + rowVector[index];
-            const currentCol = col + colVector[index];
-            // skip out of bounds
-            if(currentRow < 0 || currentCol < 0) break;
-            if(currentRow >= numRows || currentCol >= numCols) break;
-
-            // skip over visited locations && coordinates with an 'X'
-            if(visited[currentRow][currentCol]) continue;
-            if(grid[currentRow][currentCol] === 'X') break;
-            // else enqueue & add to visited for these nodes
-            rowQueue.push(currentRow);
-            colQueue.push(currentCol);
-            visited[currentRow][currentCol] = true;
-
-            // increment layer count to loop over nodes in next layer
-            nodesInNextLayerCount++;
+        // NORTH OF NODE
+        for (let x = position.xPos - 1; x >= 0; x--) {
+            if (!visitedNodes(x, position.yPos, totalMoves, currentNode)) break
+        };
+        // RIGHT OF NODE
+        for (let y = position.yPos + 1; y < grid.length; y++) {
+            if (!visitedNodes(position.xPos, y, totalMoves, currentNode)) break
+        };
+        // BOTTOM OF NODE
+        for (let x = position.xPos + 1; x < grid.length; x++) {
+            if (!visitedNodes(x, position.yPos, totalMoves, currentNode)) break
         };
     };
 
+    // return 0 for no possible path
+    return 0;
 };
 
 console.log(minimumMoves(grid, startX, startY, goalX, goalY))
