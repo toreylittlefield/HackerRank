@@ -69,6 +69,6 @@ function makeAnagram(a, b) {
 
     // return min total chars deleted
     return minTotalCharsDel;
-}
+};
 
 console.log(makeAnagram(a, b))
