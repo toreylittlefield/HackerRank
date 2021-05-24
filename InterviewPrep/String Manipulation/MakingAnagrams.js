@@ -25,6 +25,7 @@ function makeAnagram(a, b) {
     const arrayA = Array.from(a);
     const arrayB = Array.from(b);
 
+    // find shortest & longest array to optimize runtime
     const arrayALength = arrayA.length;
     const arrayBLength = arrayB.length;
     let longerArray = arrayALength > arrayBLength ? arrayA : arrayB;
@@ -61,7 +62,6 @@ function makeAnagram(a, b) {
             interSectionOfAB += smallest;
         };
     });
-
 
     // diff & substract
     let diffA = (interSectionOfAB - arrayALength) * -1;
