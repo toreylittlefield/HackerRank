@@ -24,11 +24,20 @@ const oranges = [ 5, -6 ]; // oranges: integer array, distances at which each or
 
 
 function countApplesAndOranges(s, t, a, b, apples, oranges) {
-    // Write your code here
-
+    // Sam's house is between [s,t] inclusive
+    console.log(apples.filter((curVal) => {
+        if(a + curVal >= s && a + curVal <= t) {
+            return curVal
+        }
+    }).length)
+    console.log(oranges.filter((curVal) => {
+        if(b + curVal >= s && b + curVal <= t) {
+            return curVal
+        }
+    }).length)
 }
 
-console.log(countApplesAndOranges(grades));
+console.log(countApplesAndOranges(s, t, a, b, apples, oranges));
 
 /**
  * Output Format
