@@ -9,18 +9,44 @@
 
 // Example 1: Expect 3 4 0 0 4
 3
-const q = ['AAAA', 'BBBBB', 'ABABABAB', 'BABABA', 'AAABBB']
+// const s = ['AAAA', 'BBBBB', 'ABABABAB', 'BABABA', 'AAABBB']
 
 // Example 2: Expect 6 4 1
-// const q = ['AAABBBAABB', 'AABBAABB', 'ABABABAA'];
+const s = 'AAABBBAABB' //, 'AABBAABB', 'ABABABAA'];
 
 // Constraints: Each string s will consist only of characters A and B.
 
 //Returns int: the minimum number of deletions required
 
 function alternatingCharacters(s) {
-    // Write your code here
 
-}
+    // count deletions
+    let numDeletions = 0
+
+    // a stack for storing the letters in rotating order and starts with the first letter in the stack
+    let letterStack = [s[0]];
+
+    // peak top of stack function
+    const peakStack = () => letterStack[letterStack.length - 1];
+
+    // iterate over each letter in each string
+    Array.from(s).forEach((letter, j) => {
+        if (j !== 0) {
+
+            // compare the top of the stack letter with the current letter
+            const topLetter = peakStack();
+
+            // if different letter add to top of stack else add to numDeletions count for this index in the array
+            if (topLetter !== letter) {
+                letterStack.push(letter)
+            } else {
+                numDeletions += 1;
+            };
+        };
+    });
+
+    // return numDeletions array
+    return numDeletions;
+};
 
 console.log(alternatingCharacters(s))
