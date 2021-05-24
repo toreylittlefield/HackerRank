@@ -18,12 +18,11 @@ const b = 'jxwtrhvujlmrpdoqbisbwhmgpmeoke';
 // Contraints: The strings  and  consist of lowercase English alphabetic letters, ascii[a-z].
 
 //Returns int: the minimum total characters that must be deleted
-
 function makeAnagram(a, b) {
-    // the variable minTotalCharsDel is the min # of characters to delete string to make a & b anagrams
-    let minTotalCharsDel = 0;
     const arrayA = Array.from(a);
     const arrayB = Array.from(b);
+    // the variable minTotalCharsDel is the min # of characters to delete string to make a & b anagrams
+    let minTotalCharsDel = 0;
 
     // find shortest & longest array to optimize runtime
     const arrayALength = arrayA.length;
@@ -40,15 +39,15 @@ function makeAnagram(a, b) {
     for (let index = 0; index < longerArray.length; index++) {
         const key = longerArray[index];
         let anotherKey = undefined;
-        if(index < shorterArray.length) {
+        if (index < shorterArray.length) {
             anotherKey = shorterArray[index];
-            if(!frequency.longer[anotherKey]) {
+            if (!frequency.longer[anotherKey]) {
                 frequency.longer[anotherKey] = 1;
             } else {
                 frequency.longer[anotherKey] += 1;
             };
         };
-        if(frequency.shorter[key]) {
+        if (frequency.shorter[key]) {
             frequency.shorter[key] += 1;
         } else {
             frequency.shorter[key] = 1;
@@ -57,8 +56,8 @@ function makeAnagram(a, b) {
 
     // count the intersection / frequency and add the smallest frequency
     Object.keys(frequency.shorter).forEach(key => {
-        if(frequency.longer[key]) {
-            const smallest = Math.min(frequency.longer[key],frequency.shorter[key]);
+        if (frequency.longer[key]) {
+            const smallest = Math.min(frequency.longer[key], frequency.shorter[key]);
             interSectionOfAB += smallest;
         };
     });
