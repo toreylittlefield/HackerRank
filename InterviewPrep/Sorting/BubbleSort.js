@@ -17,6 +17,16 @@ const a = [1,2,3]
  * Last Element: 3
  */
 
+// Example 2:
+// const a = [3, 2, 1]
+/**
+ * Expected Output:
+ * Array is sorted in 3 swaps.
+ * First Element: 1
+ * Last Element: 3
+ */
+
+
 function countSwaps(a) {
     // Write your code here
 
