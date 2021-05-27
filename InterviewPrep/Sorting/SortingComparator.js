@@ -13,11 +13,11 @@
 
 // Example 1: 
 const data = [
-    'amy 100',
-    'david 100',
-    'heraldo 50',
-    'aakansha 75',
-    'aleksa 150'
+    ['amy', 100],
+    ['david', 100],
+    ['heraldo', 50],
+    ['aakansha', 75],
+    ['aleksa', 150]
   ];
 /***
  * Expected Output
@@ -29,6 +29,11 @@ const data = [
  */
 
 function main(data) {
+    data.sort((a, b) => (
+        b[1] - a[1] ||
+        a[0].charCodeAt(0) - b[0].charCodeAt(0)
+    ))
+    return data;
 }
 
 console.log(main(data));
