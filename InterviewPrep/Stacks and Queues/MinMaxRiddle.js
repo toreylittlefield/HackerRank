@@ -23,10 +23,10 @@ const arr = [789168277, 694294362, 532144299, 20472621, 316665904, 59654039, 685
 // Returns array: Single line containing n space-separated integers denoting the output for each window size from 1 to n.
 
 function riddle(arr) {
-    const n = arr.length
+    const n = arr.length;
     
     // array for all the possible windows / spans
-    const windowSizesMax = Array(n).fill(-Infinity)
+    const windowSizesMax = Array(n).fill(-Infinity);
     
     // stack for tracking the starting index of each span / window
     const windowSpanStack = [];
