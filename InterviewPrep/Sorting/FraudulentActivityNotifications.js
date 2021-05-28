@@ -94,13 +94,13 @@ function activityNotifications(expenditure, d) {
     function calcMedian (data) {
         const len = d - 1;
         // if d is even
+        let i = 0;
+        let j = 0;
         if(d % 2 == 0) {
             let medianEvenPos = Math.floor(len / 2);
             let medianOddPos = Math.ceil(len / 2);
             let medianNumEven = 0;
             let medianNumOdd = 0;
-            let i = 0;
-            let j = 0;
             while(i <= medianEvenPos) {
                 medianNumEven = j;
                 i += data[j];
@@ -121,8 +121,6 @@ function activityNotifications(expenditure, d) {
 
         let medianPos = len / 2;
         let medianValue = 0;
-        let i = 0;
-        let j = 0;
         // if d is odd o
         while(i <= medianPos) {
             medianValue = j;
