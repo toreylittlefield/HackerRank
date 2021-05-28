@@ -29,62 +29,136 @@
 // const expenditure = [2, 3, 4, 2, 3, 6, 8, 4, 5]
 // const d = 5
 
+// const expenditure = [200, 199, 100, 150, 80, 60, 200, 5, 150, 10]
+// const d = 5
+
 // Exmaple 3: Expect 1
-const expenditure = [10,5,2,4,10,2]
-const d = 2
+// const expenditure = [10,5,2,4,10,2]
+// const d = 2
+
+// Example 4: Expect 633
+const json = require('../Sorting/testData.json');
+const expenditure = json.data;
+const d = 10000
 
 
 function activityNotifications(expenditure, d) {
+    console.time('start')
     /***
      * Steps:
-     * 1. Create a window / span of length d and right
-     * 2. sort the window & while sorting find the median value
-     * 3. To find the median, the formula is window[d/2] if d is odd or (window[d/2] + window[d/2 + 1])/2 if even if the window contains the ints of spanning d length
-     * 4. Check if the next value is 2X the median value if true add 1 to the total of numAlertsSent;
-     * 5. Move the window from the left by 1 and right by 1, the new median calculated again after sorting
-     * 6. Check if next value is 2X... repeat until right pointer reaches the end of expenditures
+     * 1. Use Sort Count Method
+     * 2. Use the constraint that the expenditure values are between 0 & 200 inclusive
+     * 3. To optimize the calcMedian function runtime break the loop when the (d-1)/2 is reached in the sorted count array
+     * 4. For each iteration in the sorted count array add 1 to the median variable since the index is equivalent to the Ints traversed to calculate the median
      */
 
     const n = expenditure.length;
 
     let numAlertsSent = 0;
     let medianValue = 0;
-    let window = [];
 
-    for(let right = 0; right < n; right++) {
-        const curVal = expenditure[right];
-        if(window.length !== d) {
-            window.push(curVal);
-            continue;
-        }
-        const copyData = [...window];
-        medianValue = calcMedian(copyData);
-        
+    // use a count sorted array
+    let countArr = Array(201).fill(0);
+
+    // init array to the length of the window d
+    for(let i = d - 1; i >= 0; i--) {
+        countArr[expenditure[i]] += 1;
+    };
+
+    // loop over array starting at d ending n - 1 values
+    for(let index = d; index < n - 1; index++) {
+        const curVal = expenditure[index];
+
+        // calculate the median value
+        medianValue = calcMedian(countArr);
+
         // check median against current value
         if(curVal >= medianValue * 2) {
             numAlertsSent++;
         };
 
-        window.shift();
-        window.push(curVal);
+        // decrement the previous item
+        countArr[expenditure[index - d]] --;
+
+        // add the current value
+        countArr[curVal]++;
     }
 
-    // [2, 3, 4, 2, 3, 6, 8, 4, 5]
-
     // return number of alerts sent
+    console.timeEnd('start')
     return numAlertsSent;
 
+    /**
+     * @description takes an array of Ints between 0 & 200 and returns the median value
+     * @param {array} data
+     * @returns the median number
+     */
     function calcMedian (data) {
-        const len = data.length;
-        data.sort((a, b) => a - b);
-        let even = len % 2 === 0;
-        if(even) {
-            const medianNumPos = Math.floor(data.length / 2);
-            return medianValue = (data[medianNumPos - 1] + data[medianNumPos]) / 2
+        const len = d - 1;
+        let medianEvenPos = Math.floor(len / 2);
+        let medianOddPos = Math.ceil(len / 2);
+        let medianNumEven = 0;
+        let medianNumOdd = 0;
+        // if d is even
+        if(d % 2 === 0) {
+            let i = 0;
+            let j = 0;
+            while(i <= medianEvenPos) {
+                medianNumEven = j;
+                i += data[j];
+                j++;
+            }
         };
-        const medianNumPos = Math.floor(data.length / 2) + 1;
-        return medianValue = data[medianNumPos - 1];
+        let i = 0;
+        let j = 0;
+        // if d is odd or even
+        while(i <= medianOddPos) {
+            medianNumOdd = j;
+            i += data[j];
+            j++;
+        };
+
+        // return the median number
+        return (medianNumEven + medianNumOdd) / 2;
     };
 }
+
+// function activityNotifications (expenditure, d) {
+//     console.time('TotalTime')
+//     // Number of notifications
+//     let n = 0
+
+//     // Set midpoints for median calculation
+//     let [ i1, i2 ] = [ Math.floor((d-1)/2), Math.ceil((d-1)/2) ]
+//     let m1, m2, m
+
+//     // Initialize count sorted subarray
+//     let cs = new Array(201).fill(0)
+//     for (let i = d-1; i >= 0; i--) cs[expenditure[i]]++
+
+//     // Iterate through expenditures
+//     for (let i = d, l = expenditure.length; i < l; i++) {
+        
+//         // Find median
+//         for (let j = 0, k = 0; k <= i1; k += cs[j], j++) {
+//             console.log({cs})
+//             console.log({k, val: cs[j], j, i1})
+//             m1 = j
+//         }
+//         for (let j = 0, k = 0; k <= i2; k += cs[j], j++) m2 = j
+//         let m = (m1 + m2) / 2
+
+//         // Check if notification is given
+//         if (expenditure[i] >= m * 2) n++
+
+//         console.log({curVal: expenditure[i], m, m1 , m2})
+
+//         // Replace subarray elements
+//         cs[expenditure[i-d]]--
+//         cs[expenditure[i]]++
+//     }
+//     console.timeEnd('TotalTime')
+//     return n
+// }
 
 console.log(activityNotifications(expenditure, d))
