@@ -33,13 +33,13 @@
 // const d = 5
 
 // Exmaple 3: Expect 1
-// const expenditure = [10,5,2,4,10,2]
-// const d = 2
+const expenditure = [10,5,2,4,10,2]
+const d = 2
 
 // Example 4: Expect 633
-const json = require('../Sorting/testData.json');
-const expenditure = json.data;
-const d = 10000
+// const json = require('../Sorting/testData.json');
+// const expenditure = json.data;
+// const d = 10000
 
 
 function activityNotifications(expenditure, d) {
@@ -121,44 +121,6 @@ function activityNotifications(expenditure, d) {
         // return the median number
         return (medianNumEven + medianNumOdd) / 2;
     };
-}
-
-// function activityNotifications (expenditure, d) {
-//     console.time('TotalTime')
-//     // Number of notifications
-//     let n = 0
-
-//     // Set midpoints for median calculation
-//     let [ i1, i2 ] = [ Math.floor((d-1)/2), Math.ceil((d-1)/2) ]
-//     let m1, m2, m
-
-//     // Initialize count sorted subarray
-//     let cs = new Array(201).fill(0)
-//     for (let i = d-1; i >= 0; i--) cs[expenditure[i]]++
-
-//     // Iterate through expenditures
-//     for (let i = d, l = expenditure.length; i < l; i++) {
-        
-//         // Find median
-//         for (let j = 0, k = 0; k <= i1; k += cs[j], j++) {
-//             console.log({cs})
-//             console.log({k, val: cs[j], j, i1})
-//             m1 = j
-//         }
-//         for (let j = 0, k = 0; k <= i2; k += cs[j], j++) m2 = j
-//         let m = (m1 + m2) / 2
-
-//         // Check if notification is given
-//         if (expenditure[i] >= m * 2) n++
-
-//         console.log({curVal: expenditure[i], m, m1 , m2})
-
-//         // Replace subarray elements
-//         cs[expenditure[i-d]]--
-//         cs[expenditure[i]]++
-//     }
-//     console.timeEnd('TotalTime')
-//     return n
-// }
+};
 
 console.log(activityNotifications(expenditure, d))
