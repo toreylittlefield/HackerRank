@@ -33,11 +33,7 @@ function twoStrings(s1, s2) {
 
     // map over larger string
     Array.from(lgString).forEach(letter => {
-        if(lgMap[letter]) {
-            lgMap[letter] ++;
-        } else {
-            lgMap[letter] = 1;
-        };
+        lgMap[letter] = true;
     });
 
     // if there is even 1 matching letter then return YES and end
