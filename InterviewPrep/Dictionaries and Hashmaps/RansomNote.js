@@ -30,7 +30,33 @@ const note = ['two', 'times', 'two', 'is', 'four'];
 
 function checkMagazine(magazine, note) {
     // Write your code here
-    
+    let ans = 'Yes';
+    let noteMap = {};
+
+    note.forEach(word => {
+        if(noteMap[word]) {
+           noteMap[word]++;
+        } else {
+            noteMap[word] = 1;
+        }
+    });
+
+    magazine.forEach(magWord => {
+        if(noteMap[magWord]) {
+            noteMap[magWord] --;
+        }
+    });
+
+    Object.keys(noteMap).forEach(key => {
+        if(noteMap[key] > 0) {
+            ans = 'No';
+            return;
+        }
+    });
+
+    // print the answer, no need to return ans to pass test
+    console.log(ans);
+    return ans;
 }
 
 console.log(checkMagazine(magazine, note));
