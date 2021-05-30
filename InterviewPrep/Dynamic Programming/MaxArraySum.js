@@ -18,7 +18,7 @@
 // Output - int: the maximum subset sum
 
 // Example 1: Expect 13
-// const arr = [3, 7, 4, 6, 5]
+const arr = [3, 7, 4, 6, 5]
 
 // Example 2: Expect 11
 // const arr = [2, 1, 5, 8, 4]
@@ -27,13 +27,11 @@
 // const arr = [-2,-3,-1];
 
 // Example 4: Expect 100
-const arr = [-1, -2, -3, -4, 5, 100, -7, -6]
+// const arr = [-1, -2, -3, -4, 5, 100, -7, -6]
 
 function maxSubsetSum(arr) {
-    let maxSumNonAdj = 0;
-
-    // length of arr 
-    const n = arr.length
+    // length of arr
+    const n = arr.length;
 
     // edge case
     if(n === 1) {
@@ -41,21 +39,25 @@ function maxSubsetSum(arr) {
     };
 
     let maxInt = arr[0] >= arr[1] ? arr[0]: arr[1];
-    let memo = [0, arr[0]];
+
+    // let maxes[0] be prevMax and maxes[1] be the current max
+    let maxes = [0, arr[0]];
 
     for (let index = 2; index <= n; index++) {
         const curVal = arr[index - 1];
-        const prevMax = memo[index - 2];
-        const currentMax = memo[index - 1];
+        const prevMax = maxes[0];
+        const currentMax = maxes[1];
 
         if(curVal > maxInt) maxInt = curVal;
 
+        // make the prevMax the current Max
+        maxes[0] = currentMax;
         // compare the last value in memo against the sum of prev max, current max, and the current val in the case of negative numbers
-        memo.push(Math.max(prevMax + curVal, currentMax, curVal));
-    }
+        maxes[1] = Math.max(prevMax + curVal, currentMax, curVal);
+    };
 
     // return the max sum of non-adjacent elements
-    return maxSumNonAdj = Math.max(0, memo.pop(), maxInt);
+    return Math.max(0, ...maxes, maxInt);
 }
 
 console.log(maxSubsetSum(arr));
