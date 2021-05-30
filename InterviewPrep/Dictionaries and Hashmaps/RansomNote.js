@@ -46,7 +46,7 @@ function checkMagazine(magazine, note) {
     magazine.forEach(magWord => {
         if(noteMap[magWord]) {
             noteMap[magWord] --;
-        }
+        };
     });
 
     // there need to be at least as many words from the magazine as needed for the note so all values from the noteMap should be <= 0
@@ -54,12 +54,13 @@ function checkMagazine(magazine, note) {
         if(noteMap[key] > 0) {
             ans = 'No';
             return;
-        }
+        };
     });
 
     // print the answer, no need to return ans to pass test
     console.log(ans);
     return ans;
-}
+
+};
 
 console.log(checkMagazine(magazine, note));
