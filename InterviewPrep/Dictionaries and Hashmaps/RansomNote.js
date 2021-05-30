@@ -33,20 +33,23 @@ function checkMagazine(magazine, note) {
     let ans = 'Yes';
     let noteMap = {};
 
+    // build a frequency hash map for each word in note
     note.forEach(word => {
         if(noteMap[word]) {
            noteMap[word]++;
         } else {
             noteMap[word] = 1;
-        }
+        };
     });
 
+    // iterate and decrement for each matching word from the noteMap and magazine
     magazine.forEach(magWord => {
         if(noteMap[magWord]) {
             noteMap[magWord] --;
         }
     });
 
+    // there need to be at least as many words from the magazine as needed for the note so all values from the noteMap should be <= 0
     Object.keys(noteMap).forEach(key => {
         if(noteMap[key] > 0) {
             ans = 'No';
