@@ -47,12 +47,12 @@ function sherlockAndAnagrams(s) {
 
         // here's the inner loop that starts at the current index + 1 and creates all possible substrings
         for (let j = idx + 1; j <= s.length; j++) {
-            
+
             // sort the substrings to account for all possible permutations of the string
             let subStr =  Array.from(s.substring(idx, j)).sort();
 
             // if already in the map add to the counts
-            if(strMap[subStr]) { 
+            if(strMap[subStr]) {
                 // substract what we previously added to current the total accurate
                 const prevVal = strMap[subStr]
                 countAnagrams -= prevVal * (prevVal - 1) / 2;
