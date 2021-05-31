@@ -18,10 +18,10 @@
 // const s = `abba`
 
 // Example 2: Expect 0
-// const s = `abcd`
+const s = `abcd`
 
 // Example 3: Expect 3
-const s = `ifailuhkqq`
+// const s = `ifailuhkqq`
 
 // Example 4: Expect 10
 // const s = `kkkk`
@@ -52,17 +52,16 @@ function sherlockAndAnagrams(s) {
             let subStr =  s.substring(idx, j).split('').sort().join('');
 
             // if already in the map add to the counts
-            if(strMap[subStr]) {
-                // the previous val at this key val 
+            if(strMap[subStr]) { 
+                // substract what we previously added to current the total accurate
                 const prevVal = strMap[subStr]
+                countAnagrams -= prevVal * (prevVal - 1) / 2;
 
-                // use the guassian trick to add
+                // use the guassian trick to add to the totals
                 strMap[subStr] += 1;
                 const val = strMap[subStr]
                 countAnagrams += val * ( val - 1) / 2;
 
-                // substract what we previously added to current the total accurate
-                countAnagrams -= prevVal * (prevVal - 1) / 2;
 
             } else {
                 // add to the map if it doesn't exist
