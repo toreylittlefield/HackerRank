@@ -15,10 +15,10 @@
 // input
 
 // Example 1: Expect 4
-// const s = `abba`
+const s = `abba`
 
 // Example 2: Expect 0
-const s = `abcd`
+// const s = `abcd`
 
 // Example 3: Expect 3
 // const s = `ifailuhkqq`
@@ -46,10 +46,10 @@ function sherlockAndAnagrams(s) {
     Array.from(s).forEach((letter, idx) => {
 
         // here's the inner loop that starts at the current index + 1 and creates all possible substrings
-        for (let j = idx + 1; j < s.length + 1; j++) {
+        for (let j = idx + 1; j <= s.length; j++) {
             
             // sort the substrings to account for all possible permutations of the string
-            let subStr =  s.substring(idx, j).split('').sort().join('');
+            let subStr =  Array.from(s.substring(idx, j)).sort();
 
             // if already in the map add to the counts
             if(strMap[subStr]) { 
