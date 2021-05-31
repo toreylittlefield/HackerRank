@@ -15,13 +15,13 @@
 // input
 
 // Example 1: Expect 4
-const s = `abba`
+// const s = `abba`
 
 // Example 2: Expect 0
 // const s = `abcd`
 
 // Example 3: Expect 3
-// const s = `ifailuhkqq`
+const s = `ifailuhkqq`
 
 // Example 4: Expect 10
 // const s = `kkkk`
@@ -29,10 +29,50 @@ const s = `abba`
 // Example 5: Expect 5
 // const s = `cdcd`
 
-
 function sherlockAndAnagrams(s) {
-    // Write your code here
 
+    /***
+     * Note that s has the constraint 1>= s <=100
+     * Gaussian Trick For Summing: Applied in this situation of pairs/sequences use numberPairs * (numberPairs - 1) / 2
+     */
+
+    // variable to count all anagrams found
+    let countAnagrams = 0;
+    
+    // create a map / hash table for all possible permutations we'll encounter from s 
+    let strMap = {}
+    
+    // loop with in loop: first loop for each letter, inner loop the letter to create a substring for each possible substring of S
+    Array.from(s).forEach((letter, idx) => {
+
+        // here's the inner loop that starts at the current index + 1 and creates all possible substrings
+        for (let j = idx + 1; j < s.length + 1; j++) {
+            
+            // sort the substrings to account for all possible permutations of the string
+            let subStr =  s.substring(idx, j).split('').sort().join('');
+
+            // if already in the map add to the counts
+            if(strMap[subStr]) {
+                // the previous val at this key val 
+                const prevVal = strMap[subStr]
+
+                // use the guassian trick to add
+                strMap[subStr] += 1;
+                const val = strMap[subStr]
+                countAnagrams += val * ( val - 1) / 2;
+
+                // substract what we previously added to current the total accurate
+                countAnagrams -= prevVal * (prevVal - 1) / 2;
+
+            } else {
+                // add to the map if it doesn't exist
+                strMap[subStr] = 1;
+            }
+        };
+    });
+
+    // return the total count of anagrams found
+    return countAnagrams;
 }
 
 console.log(sherlockAndAnagrams(s));
