@@ -15,7 +15,7 @@
 // input
 
 // Example 1: Expect 4
-const s = `abba`
+// const s = `abba`
 
 // Example 2: Expect 0
 // const s = `abcd`
@@ -28,6 +28,9 @@ const s = `abba`
 
 // Example 5: Expect 5
 // const s = `cdcd`
+
+// Example 6: Expect 121
+const s = `dictionarydictionary`
 
 function sherlockAndAnagrams(s) {
 
