@@ -50,7 +50,7 @@ const queries = [
 ]
 
 
-
+// O(n*k) naive solution timesouts
 // function freqQuery(queries) {
 //     // array to store our answers for type 3 (frequency match)
 //     let type3Ans = [];
@@ -85,6 +85,8 @@ const queries = [
 //     return type3Ans;
 // }
 
+
+// O(n) solution passing all tests
 function freqQuery(queries) {
     // array to store our answers for type 3 (frequency match)
     let type3Ans = [];
