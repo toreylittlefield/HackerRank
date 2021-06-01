@@ -35,19 +35,25 @@
 // const r = 1;
 
 // Example 6: Expect 0
-const arr = [125, 5, 25, 5, 1]
-const r = 5
+// const arr = [125, 5, 25, 5, 1]
+// const r = 5
 
 // Example 7: Expect 4 {[0,1,2],[0,1,3],[0,2,3],[1,2,3]}
 // const arr = [1,1,1,1]
 // const r = 1;
 
+// Example 8: Expect 2325652489
+const json = require('./CountTriplesTest.json');
+const arr = json.data;
+const r = 3
+
 
 function countTriplets(arr, r) {
-
+    
+    let numberof = 0
     // count # triplets found
     let countTrip = 0;
-
+    
     const arrLen = arr.length;
 
     // edge case: no possible triplets
@@ -61,35 +67,27 @@ function countTriplets(arr, r) {
         const curNum = arr[idx]
         let nextPartnerNum = curNum * r;
 
-        // console.log({curNum, nextPartnerNum})
-
-        // skip numbers not in geometric series as they cannot form triplets
-        if(curNum % r <= 1 && curNum > 0) {
-
-            // add to total by number of triplets
-            if(tripletsMap[curNum] ) {
-                countTrip += tripletsMap[curNum];
-            };
-
-            if(numMap[curNum]) {
-                if(tripletsMap[nextPartnerNum]) {
-                    tripletsMap[nextPartnerNum] += numMap[curNum]
-                } else {
-                    tripletsMap[nextPartnerNum] = numMap[curNum];
-                };
-            };
-
-            // add or increment numMap
-            if(numMap[nextPartnerNum]) {
-                numMap[nextPartnerNum]++;
-            } else {
-                numMap[nextPartnerNum] = 1;
-            };
-
+        // add to total by number of triplets
+        if(tripletsMap[curNum] ) {
+            (countTrip += tripletsMap[curNum]);
         };
-    };
+        
+        if(numMap[curNum]) {
+            if(tripletsMap[nextPartnerNum]) {
+                tripletsMap[nextPartnerNum] += numMap[curNum];
+            } else {
+                tripletsMap[nextPartnerNum] = numMap[curNum];
+            };
+        };
 
-    // console.log({tripletsMap, numMap})
+        // add or increment numMap
+        if(numMap[nextPartnerNum]) {
+            numMap[nextPartnerNum]++;
+        } else {
+            numMap[nextPartnerNum] = 1;
+        };
+
+    };
 
     // return the number of triplets in arr following the geometric progression and i < j < k
     return countTrip;
