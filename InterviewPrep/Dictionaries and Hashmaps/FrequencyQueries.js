@@ -16,10 +16,10 @@
 // input int [][]: queries
 
 // Example 1: Expect [0, 1] which is NO, YES
-// const queries = [[1, 6],[3, 2],[1, 10],[1, 10],[1, 6],[2,5],[3, 2]]
+const queries = [[1, 6],[3, 2],[1, 10],[1, 10],[1, 6],[2,5],[3, 2]]
 
 // Example 2: With Random Generator
-const randomNumber = (num) => Math.ceil(Math.random() * num);
+// const randomNumber = (num) => Math.ceil(Math.random() * num);
 // const queries = Array(10000).fill(0).map(el => [randomNumber(3),randomNumber(10**10)])
 
 // Example 3: Expect [0,1]
