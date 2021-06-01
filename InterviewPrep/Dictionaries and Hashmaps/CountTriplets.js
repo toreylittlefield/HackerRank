@@ -26,6 +26,10 @@ const r = 4
 // const arr = [1, 5, 5, 25, 125]
 // const r = 5
 
+// Example 4: Expect 2
+// const arr = [1, 2, 2, 4]
+// const r = 2;
+
 
 function countTriplets(arr, r) {
 
