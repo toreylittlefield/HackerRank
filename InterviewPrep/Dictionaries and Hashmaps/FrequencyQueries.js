@@ -13,7 +13,7 @@
 
 // Returns int []: the results of queries of type 3
 
-// input
+// input int [][]: queries
 
 // Example 1: Expect [0, 1] which is NO, YES
 const queries = [[1, 6],[3, 2],[1, 10],[1, 10],[1, 6],[2,5],[3, 2]]
