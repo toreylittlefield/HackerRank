@@ -30,9 +30,42 @@ const r = 4
 // const arr = [1, 2, 2, 4]
 // const r = 2;
 
+// Example 5: Expect 161700
+// const arr = Array(100).fill(1);
+// const r = 1;
+
 
 function countTriplets(arr, r) {
 
+    // count # triplets found
+    let countTrip = 0;
+
+    const arrLen = arr.length
+
+    // edge case: no possible triplets
+    if(arrLen < 3) return countTrip;
+
+    // use a map
+
+    
+    arr.forEach((num, idx) => {
+        for (let jdx = idx + 1; jdx < arrLen; jdx++) {
+            for (let kdx = jdx + 1; kdx < arrLen; kdx++) {
+                // console.log({idx, jdx, kdx})
+                const isValid = checkValidTriplet([arr[idx], arr[jdx], arr[kdx]], r);
+                if(isValid) countTrip++;
+            }
+        }
+    })
+
+    // return the number of triplets in arr following the geometric progression and i < j < k
+    return countTrip;
+
+    // method to check geometric progression && if valid triplet
+    function checkValidTriplet([i, j, k], r) {
+        // console.log({i,j,k})
+        return i <= j && i * r === j && j <= k && j * r === k;
+    };
 }
 
 console.log(countTriplets(arr, r));
