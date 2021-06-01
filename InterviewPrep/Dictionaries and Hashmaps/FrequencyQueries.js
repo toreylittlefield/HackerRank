@@ -25,30 +25,6 @@ const randomNumber = (num) => Math.ceil(Math.random() * num);
 // Example 3: Expect [0,1]
 // const queries = [[1, 5],[1, 6],[3, 2],[1, 10],[1, 10],[1, 6],[2, 5],[3, 2]]
 
-// Example 4: Expect [0,1]
-const queries = [
-    [3, 4],
-    [2, 1003],
-    [1, 1003],
-    [1, 16],
-    [3, 1],
-    [1, 16],
-    [2, 16],
-    [1, 16],
-    [3, 2],
-    [2, 16],
-    [2, 16],
-    [3, 2],
-    [3, 1],
-    [1, 1003],
-    [1, 16],
-    [3, 1],
-    [3, 2],
-    [2, 16],
-    [2, 1003],
-    [3, 2]
-]
-
 
 // O(n*k) naive solution timesouts
 // function freqQuery(queries) {
