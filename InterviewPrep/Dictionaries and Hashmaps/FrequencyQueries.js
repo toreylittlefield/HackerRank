@@ -19,8 +19,39 @@
 const queries = [[1, 6],[3, 2],[1, 10],[1, 10],[1, 6],[2,5],[3, 2]]
 
 function freqQuery(queries) {
+    // array to store our answers for type 3 (frequency match)
+    let type3Ans = [];
+
+    // create map
+    const freqMap = {};
+
+    // first element is operation 1 (insert),2 (delete) or 3 (1 || 0 if matching frequency);
+    // naive solution
+    queries.forEach(query => {
+        console.log(query)
+        const [oper, value] = query;
+        switch(oper) {
+            // insert the value
+            case 1: {
+                freqMap[value] ? freqMap[value] ++ : freqMap[value] = 1;
+                break;
+            }
+            // delete 1 from the value
+            case 2: {
+                freqMap[value] ? freqMap[value]-- : null;
+                break;
+            }
+            case 3: {
+                // check if matching frequency exists
+                Object.values(freqMap).includes(value) ? type3Ans.push(1) : type3Ans.push(0)
+            }
+        }
+    });
 
 
+
+    // return the type3Ans which are either 0 or 1 in the int []
+    return type3Ans;
 }
 
 console.log(freqQuery(queries));
