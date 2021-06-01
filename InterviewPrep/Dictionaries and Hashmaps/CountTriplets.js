@@ -43,14 +43,17 @@
 // const r = 1;
 
 // Example 8: Expect 2325652489
-const json = require('./CountTriplesTest.json');
-const arr = json.data;
+// const json = require('./CountTriplesTest.json');
+// const arr = json.data;
+// const r = 3
+
+// Example 10: Expect 1
+const arr = [3,9,27,3]
 const r = 3
 
 
 function countTriplets(arr, r) {
     
-    let numberof = 0
     // count # triplets found
     let countTrip = 0;
     
@@ -64,14 +67,34 @@ function countTriplets(arr, r) {
     const tripletsMap = {};
 
     for (let idx = 0; idx < arrLen; idx++) {
+
+        // current value && the next value in the triplet
         const curNum = arr[idx]
         let nextPartnerNum = curNum * r;
 
-        // add to total by number of triplets
+        /**
+         * The main logic here is 3 if statements:
+         * note: we cannot find a triplet until the index >= 2 (the third pass and the 3 ifs logic in proper order ensures that)
+         * Starting at index 0, the current value for example is 3 and r is 3 in a triplet {3,9,27,3}
+         * at index 0 (the first pass), 3 is not in any map, so we 3 * r = 9 add it to the numMap with value 1
+         * at index 1 (the second pass), 9 does exist in the numMap but not in the triplets map so we add the triplet map as 9 * r = 27 with a value of 1
+         * 9 * r = 27, 27 does not exist in the numMap so we add it with a value of 1
+         * at index 2 (the third pass), 27 exists in the triplets map from our last pass at index 2; it has a value of 1 and so we increment the total count of triplets by this amount 1
+         * we also have seen 27 in the numMap from the last pass at index 2, so we add to tripletsMap[27 * 3] = 1 (or said differently the previous value of numMap[27] which is 1) since 81 does not exist in the triplets map
+         * we also add 27 * r = 81 to the numMap and increment by 1;
+         * at index 4 we have again 3, 3 is not in any map but 3 * r = 9 is in the numMap already, so we update the numMap map at 9 which is now 2 as we have seen 3 twice now
+         * the total we return is 1 # of triplets
+         */
+
+        // add to total triplet count by value in the tripletsMap
         if(tripletsMap[curNum] ) {
             (countTrip += tripletsMap[curNum]);
         };
         
+        /** if current matching pair already exists in our numMap
+        * increment by the total number of existing value in numMap
+        * or add to the map of our triplets
+        */
         if(numMap[curNum]) {
             if(tripletsMap[nextPartnerNum]) {
                 tripletsMap[nextPartnerNum] += numMap[curNum];
@@ -80,7 +103,7 @@ function countTriplets(arr, r) {
             };
         };
 
-        // add or increment numMap
+        // add the current number * r to the map if not exist or increment numMap count
         if(numMap[nextPartnerNum]) {
             numMap[nextPartnerNum]++;
         } else {
