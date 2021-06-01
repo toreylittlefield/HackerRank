@@ -16,7 +16,74 @@
 // input int [][]: queries
 
 // Example 1: Expect [0, 1] which is NO, YES
-const queries = [[1, 6],[3, 2],[1, 10],[1, 10],[1, 6],[2,5],[3, 2]]
+// const queries = [[1, 6],[3, 2],[1, 10],[1, 10],[1, 6],[2,5],[3, 2]]
+
+// Example 2: With Random Generator
+const randomNumber = (num) => Math.ceil(Math.random() * num);
+// const queries = Array(10000).fill(0).map(el => [randomNumber(3),randomNumber(10**10)])
+
+// Example 3: Expect [0,1]
+// const queries = [[1, 5],[1, 6],[3, 2],[1, 10],[1, 10],[1, 6],[2, 5],[3, 2]]
+
+// Example 4: Expect [0,1]
+const queries = [
+    [3, 4],
+    [2, 1003],
+    [1, 1003],
+    [1, 16],
+    [3, 1],
+    [1, 16],
+    [2, 16],
+    [1, 16],
+    [3, 2],
+    [2, 16],
+    [2, 16],
+    [3, 2],
+    [3, 1],
+    [1, 1003],
+    [1, 16],
+    [3, 1],
+    [3, 2],
+    [2, 16],
+    [2, 1003],
+    [3, 2]
+]
+
+
+
+// function freqQuery(queries) {
+//     // array to store our answers for type 3 (frequency match)
+//     let type3Ans = [];
+
+//     // create map
+//     const freqMap = {};
+
+//     // first element is operation 1 (insert),2 (delete) or 3 (1 || 0 if matching frequency);
+//     // naive solution
+//     queries.forEach(query => {
+//         console.log(query)
+//         const [oper, value] = query;
+//         switch(oper) {
+//             // insert the value
+//             case 1: {
+//                 freqMap[value] ? freqMap[value] ++ : freqMap[value] = 1;
+//                 break;
+//             }
+//             // delete 1 from the value
+//             case 2: {
+//                 freqMap[value] ? freqMap[value]-- : null;
+//                 break;
+//             }
+//             case 3: {
+//                 // check if matching frequency exists
+//                 Object.values(freqMap).includes(value) ? type3Ans.push(1) : type3Ans.push(0)
+//             }
+//         }
+//     });
+
+//     // return the type3Ans which are either 0 or 1 in the int []
+//     return type3Ans;
+// }
 
 function freqQuery(queries) {
     // array to store our answers for type 3 (frequency match)
@@ -24,34 +91,60 @@ function freqQuery(queries) {
 
     // create map
     const freqMap = {};
+    let freqSet = {};
 
     // first element is operation 1 (insert),2 (delete) or 3 (1 || 0 if matching frequency);
     // naive solution
-    queries.forEach(query => {
-        console.log(query)
-        const [oper, value] = query;
-        switch(oper) {
-            // insert the value
-            case 1: {
-                freqMap[value] ? freqMap[value] ++ : freqMap[value] = 1;
-                break;
-            }
+    for (let index = 0; index < queries.length; index++) {
+        const [oper, value] = queries[index];
+
+        // insert the value
+        if (oper === 1) {
+            // use to remove from the freqSet table after adding if not undefined
+            const valueToDelete = freqMap[value];
+
+            // increment or add to freqMap
+            valueToDelete ? freqMap[value]++ : freqMap[value] = 1;
+
+            // add to the frequency table or create in table
+            freqSet[freqMap[value]] ? freqSet[freqMap[value]]++ : freqSet[freqMap[value]] = 1;
+
+            // decrement from former frequency table if it already exists
+            if (valueToDelete) {
+                freqSet[valueToDelete] ? freqSet[valueToDelete]-- : null;
+            };
+        } else if (oper === 2) {
             // delete 1 from the value
-            case 2: {
-                freqMap[value] ? freqMap[value]-- : null;
-                break;
-            }
-            case 3: {
-                // check if matching frequency exists
-                Object.values(freqMap).includes(value) ? type3Ans.push(1) : type3Ans.push(0)
-            }
-        }
-    });
 
+            const valueToDelete = freqMap[value];
 
+            // do nothing if nothing to delete
+            if (valueToDelete > 0) {
+
+                // decrement
+                freqMap[value]--;
+
+                // get the remaining value to add to freqSet map
+                const valueToAdd = freqMap[value];
+
+                // decrement from the freqSet for the current frequency
+                freqSet[valueToDelete] && freqSet[valueToDelete]--;
+
+                // update the freqSet
+                if (valueToAdd > 0) {
+                    freqSet[valueToAdd] ? freqSet[valueToAdd]++ : freqSet[valueToAdd] = 1
+                };
+            };
+
+        } else if (oper === 3) {
+            // check if matching frequency exists
+            freqSet[value] > 0 ? type3Ans.push(1) : type3Ans.push(0);
+        };
+    };
 
     // return the type3Ans which are either 0 or 1 in the int []
     return type3Ans;
 }
 
+// freqQuery(queries)
 console.log(freqQuery(queries));
