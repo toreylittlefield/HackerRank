@@ -12,18 +12,25 @@
 const crew_id = [ 4,5,1,4,2]
 const job_id = [4,4,7,9,10 ]
 
-// Passing Solution but naive solution with O(nlog(n)+klog(k))
+// Passing Solution but naive solution with O(nlog(n)+klog(k)) & assumming that crew_id & job_id are the same length (size)
 function getMinCost(crew_id, job_id) {
-    // Write your code here
-    let total = 0;
-    crew_id.sort((a,b) => a - b)
-    job_id.sort((a,b) => a - b)
-    crew_id.forEach((value, index) => {
-        const job = job_id[index]
-        const diff = Math.abs(value - job);
-        total += diff;
+
+    // variable to track the minimum total distance traveled
+    let minTotalDistance = 0;
+
+    // by sorting both in arrays (crew_id & job_id) in ascending order we will know the minimum distances needed to travel
+    crew_id.sort((a,b) => a - b);
+    job_id.sort((a,b) => a - b);
+
+    // iterate and calc the absolute difference between the starting and ending (job) distance to calculate the total min distance
+    crew_id.forEach((startDis, index) => {
+        const jobDis = job_id[index];
+        const diff = Math.abs(startDis - jobDis);
+        minTotalDistance += diff;
     });
-    return total;
+
+    // return the min total distance traveled by the crews
+    return minTotalDistance;
 }
 
 console.log(getMinCost(crew_id, job_id))
