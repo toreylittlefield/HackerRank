@@ -17,17 +17,17 @@ const parent = [-1,0,0,0]
 const file_sizes = [10,11,10,10]
 
 function mostBalancedPartition(parent, files_size) {
-    // track the min size which we want to return
+    // track the min file size difference which we want to return
     let minDiff = Infinity;
 
     // create the tree with the parent input
-    const tree = createTree(parent);
-
-    const rootSum = getSum(0);
+    const tree = createTree();
 
     // get the array of parents to loop over
     const parentArr = Object.keys(tree);
-
+    
+    // calculate the total system file size with all children to compare against the partitions
+    const totalTreeSum = getSum(0);
 
     // loop through each parent and calculate the sum of file_size and find the difference,
     // compare this difference to the lowest difference found as minDiff
@@ -42,8 +42,8 @@ function mostBalancedPartition(parent, files_size) {
             // get the sum for the children (here multiple by 2, as the rootSum already includes the sum of these nodes)
             const childrenSum = 2 * getSum(child);
 
-            // calculate the difference between between this partition of child nodes and the rootSum to get the minimum difference
-            minDiff = Math.min(Math.abs( childrenSum - rootSum ), minDiff);
+            // calculate the difference between between this partition of child nodes and the totalTreeSum to get the minimum difference
+            minDiff = Math.min(Math.abs( totalTreeSum -childrenSum ), minDiff);
         })
     });
 
@@ -55,7 +55,7 @@ function mostBalancedPartition(parent, files_size) {
      * @param {object} parent 
      * @returns {object} returns the tree structure with parent nodes as keys and children indexes as values in an array
      */
-    function createTree(parent){
+    function createTree() {
         const treeStructure = {};
 
         // find the parent / child nodes and store them with parent as the key
@@ -79,11 +79,11 @@ function mostBalancedPartition(parent, files_size) {
 
     /**
      * @description function to sum the file sizes for a node and it's children
-     * @param {object} node
+     * @param {number} node representing the parent node
      * @returns {number} sum of node & child nodes
      */
     function getSum(node) {
-        // if theres no child nodes of this parent node just return the parent file size
+        // if leaf node return the file size
         if (!tree[node]) {
             return files_size[node];
         };
@@ -95,14 +95,15 @@ function mostBalancedPartition(parent, files_size) {
         let nodeStack = [node];
 
         while (nodeStack.length) {
-          const childNode = nodeStack.pop();
+          const parentNode = nodeStack.pop();
+          const childNodes = tree[parentNode];
 
           // total the fileSizes
-          sumFileSize += files_size[childNode];
+          sumFileSize += files_size[parentNode];
 
           // check if other child nodes exists and push them onto the stack
-          if(tree[childNode]){
-              nodeStack.push(...tree[childNode]);
+          if(childNodes){
+              nodeStack.push(...childNodes);
           };
 
         };
