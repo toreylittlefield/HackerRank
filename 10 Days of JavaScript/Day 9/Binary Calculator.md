@@ -1,13 +1,11 @@
 ### Link To Challenge
 [Day 9: Binary Calculator](https://www.hackerrank.com/challenges/js10-binary-calculator?hr_b=1)
 
------------
-
-###Objective
+### Objective
 
 In this challenge, we implement a calculator that uses binary numbers. Check out the attached tutorial for learning materials.
 
-###Task
+### Task
 
 Implement a simple calculator that performs the following operations on binary numbers: addition, subtraction, multiplication, and division. Note that division operation must be integer division only; for example, $1001/100 = 10$, $1110 / 101 = 10$, and $101/ 1 = 1$.
 
@@ -53,13 +51,13 @@ The `.js` and `.css` files are in different directories, so use the link tag to 
 </html>
 ```
 
-###Constraints
+### Constraints
 
 All expressions in the test dataset are entered in the form $$operand1 \to operator \to operand2$$ , where $operand1$ is the first binary number, $operand2$ is the second binary number, and $operator$ is in the set $\{+,-,*,=  \}$.
 Both operands will always be positive integers when converted from base-**2** to base-**10**.
 All expressions will be valid.
 
-###Explanation
+### Explanation
 
 Consider the following sequence of button clicks:
     $ 1 \to1 \to 1 \to 0 \to1 \to + \to 1 \to 0 \to 0 \to 0 \to 0$
