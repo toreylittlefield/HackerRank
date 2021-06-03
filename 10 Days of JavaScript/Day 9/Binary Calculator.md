@@ -65,11 +65,11 @@ Consider the following sequence of button clicks:
     $ 1 \to1 \to 1 \to 0 \to1 \to + \to 1 \to 0 \to 0 \to 0 \to 0$
 Before pressing the $=$ button, the result div looks like this:
 
-<img src="https://s3.amazonaws.com/hr-challenge-images/18103/1456666017-1857ab934b-ScreenShot2016-02-28at6.55.52PM.png" alt="Binary Calculator Example Input"/>
+<img src="https://s3.amazonaws.com/hr-challenge-images/18103/1456666017-1857ab934b-ScreenShot2016-02-28at6.55.52PM.png" alt="Binary Calculator Example Input" style="height: 60px; width:120;"/>
 
 After pressing the $=$ button to evaluate our expression, the result div looks like this:
 
-<img src="https://s3.amazonaws.com/hr-challenge-images/18103/1456666141-da2d0c1331-ScreenShot2016-02-28at6.58.38PM.png" alt="Binary Calculator Example Output"/>
+<img src="https://s3.amazonaws.com/hr-challenge-images/18103/1456666141-da2d0c1331-ScreenShot2016-02-28at6.58.38PM.png" alt="Binary Calculator Example Output" style="height: 60px; width:120;"/>
 
 
 Notice that $(11011)_2 = (27)_2, (1000)_2 = (8)_{10} $ and $(100011)_2 = (35)_{10}$, so our calculator evaluated the expression correctly.
@@ -78,15 +78,15 @@ Now, let's consider our next sequence of button clicks as:
  $ 0 \to 1 \to * \to 1 \to 1 \to 1 =$
 Before pressing the $=$ button, the result div looks like this:
 
-<img src="https://s3.amazonaws.com/hr-challenge-images/18103/1456666566-39a02c93ac-ScreenShot2016-02-28at7.04.23PM.png" alt="Binary Calculator Example Input Multiple"/>
+<img src="https://s3.amazonaws.com/hr-challenge-images/18103/1456666566-39a02c93ac-ScreenShot2016-02-28at7.04.23PM.png" alt="Binary Calculator Example Input Multiple" style="height: 60px; width:120;"/>
 
 
 After pressing the $=$ button to evaluate our expression, the result div looks like this:
 
-<img src="https://s3.amazonaws.com/hr-challenge-images/18103/1456666602-bb107fb013-ScreenShot2016-02-28at7.05.26PM.png" alt="Binary Calculator Example Output Multiple"/>
+<img src="https://s3.amazonaws.com/hr-challenge-images/18103/1456666602-bb107fb013-ScreenShot2016-02-28at7.05.26PM.png" alt="Binary Calculator Example Output Multiple" style="height: 60px; width:120;"/>
 
 Consider the next sequence of button clicks as:
  $ C \to 1 \to 1 $
 The result div looks like this:
 
-<img src="https://s3.amazonaws.com/hr-challenge-images/18103/1456667223-af168e6fc7-ScreenShot2016-02-28at7.16.38PM.png" alt="Binary Calculator Example Clear"/>
+<img src="https://s3.amazonaws.com/hr-challenge-images/18103/1456667223-af168e6fc7-ScreenShot2016-02-28at7.16.38PM.png" alt="Binary Calculator Example Clear" style="height: 60px; width:120;"/>
