@@ -15,6 +15,7 @@ const n = 12
 
 // Returns int the nth element in the Fibonacci sequence
 
+// time complexity with recursion O(2^n)
 function fibonacci(n) {
     if(n < 2) return n;
 
@@ -22,4 +23,42 @@ function fibonacci(n) {
     return n
 }
 
-console.log(fibonacci(n));
+// console.log(fibonacci(n));
+
+// memoized fibonacci version time complexity linear O(n) but crazy slow and space complexity is O(n)
+const memo = (cb) => {
+    let cache = {}
+    return (n) => {
+        if (n in cache) {
+            return cache[n]
+        } else {
+            cache[n] = cb(n);
+            return cache[n];
+        };
+    };
+};
+
+function fibonacciMemo(num) {
+    let cache = {}
+    function fibo(num , cache) {
+
+        if(cache[num]) {
+            return cache[num];
+        };
+
+        if(num < 3) {
+            cache[num] = num - 1;
+            return num - 1;
+        };
+
+        num = fibo((num - 1), cache) + fibo((num - 2), cache);
+        cache[num] = num;
+        return num;
+    };
+
+    return fibo(num, cache);
+}
+const memoizedFibo = memo(fibonacciMemo);
+// console.log(memoizedFibo(5))
+// console.log(memoizedFibo(4))
+console.log(memoizedFibo(50));
