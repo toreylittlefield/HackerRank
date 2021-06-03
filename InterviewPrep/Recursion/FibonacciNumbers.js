@@ -39,6 +39,7 @@ const memo = (cb) => {
 };
 
 function fibonacciMemo(num) {
+    console.time('startmemo')
     let cache = {}
     function fibo(num , cache) {
 
@@ -55,17 +56,18 @@ function fibonacciMemo(num) {
         cache[num] = num;
         return num;
     };
-
+    console.timeEnd('startmemo')
     return fibo(num, cache);
 }
 const memoizedFibo = memo(fibonacciMemo);
 // console.log(memoizedFibo(5))
 // console.log(memoizedFibo(4))
-// console.log(memoizedFibo(50));
+console.log(memoizedFibo(40));
 
-// Fibonacci not using recursion or memo, just a while loop, which is O(n) time and constant O(1) space complexity
+// Fibonacci not using recursion just a while loop, which is O(n) time and constant O(1) space complexity
 // it is also much faster than recurison for larger inputs because there is no huge number of calls added to the call stack
 const loopFibonacci = (num) => {
+    console.time('loopfibo')
     let current = 1;
     let prev = 0;
     let sum = 0;
@@ -76,8 +78,8 @@ const loopFibonacci = (num) => {
         prev = sum;
         num--;
     };
-
+    console.timeEnd('loopfibo')
     return sum;
 }
 
-console.log(loopFibonacci(4))
+console.log(loopFibonacci(40))
