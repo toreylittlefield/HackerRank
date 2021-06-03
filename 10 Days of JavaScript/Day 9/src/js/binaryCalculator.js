@@ -10,12 +10,17 @@ function onButton(e) {
         case '-':
         case '*':
         case '/':
+            if(checkValidOperation(res, action) === false) break;
             res.innerText += action;
             break;
         case 'C':
             res.innerText = '';
             break;
         case '=':
+            if(checkValidOperation(res, action) === false) {
+                res.innerText = res.innerText.slice(0, res.innerText.length - 1);
+                break;
+            }
             let expr = res.innerText;
             let nums = /(\d+)/g;
             // Replace all base 2 nums with base 10 equivs
@@ -66,6 +71,26 @@ function onButton(e) {
         });
         return result;
     };
+
+    function checkValidOperation (res, action) {
+        const resText = res.innerText;
+        const lastAction = resText[resText.length - 1];
+        if(resText.length <= 1) {
+            return true;
+        };
+        const lastNaN = isNaN(lastAction)
+        const actionNaN = isNaN(action);
+        console.log({lastAction, lastNaN})
+        if(lastNaN && actionNaN) {
+            return false;
+        } else if(action === '=') {
+            if(lastAction === '1' || lastAction === '0') {
+                return true
+            };
+            return false;
+        };
+        return true;
+    }
 }
 let buttons = document.getElementsByTagName('button');
 for (let button of buttons) {
