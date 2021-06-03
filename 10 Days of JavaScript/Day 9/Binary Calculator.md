@@ -7,7 +7,7 @@ In this challenge, we implement a calculator that uses binary numbers. Check out
 
 ### Task
 
-Implement a simple calculator that performs the following operations on binary numbers: addition, subtraction, multiplication, and division. Note that division operation must be integer division only; for example, <!-- $1001/100 = 10$, $1110 / 101 = 10$ --> <img style="transform: translateY(0.1em); background: white;" src="..\..\svg\AWmsV0bWUr.svg">, and <!-- $101/ 1 = 1$ --> <img style="transform: translateY(0.1em); background: white;" src="..\..\svg\gP55mPD0Y8.svg">.
+Implement a simple calculator that performs the following operations on binary numbers: addition, subtraction, multiplication, and division. Note that division operation must be integer division only; for example, <!-- $1001/100 = 10$, $1110 / 101 = 10$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=1001%2F100%20%3D%2010%24%2C%20%241110%20%2F%20101%20%3D%2010"> , and <!-- $101/ 1 = 1$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=101%2F%201%20%3D%201"> 
 
 The calculator's initial state must look like this:
 
@@ -55,7 +55,9 @@ The `.js` and `.css` files are in different directories, so use the link tag to 
 
 All expressions in the test dataset are entered in the form <!-- $$operand1 \to operator \to operand2$$ --> 
 
-<div align="center"><img style="background: white;" src="..\..\svg\D757MlMPes.svg"></div> , where <!-- $operand1$ --> <img style="transform: translateY(0.1em); background: white;" src="..\..\svg\9EiLUpuYfn.svg"> is the first binary number, <!-- $operand2$ --> <img style="transform: translateY(0.1em); background: white;" src="..\..\svg\FVTz3PgAFH.svg"> is the second binary number, and <!-- $operator$ --> <img style="transform: translateY(0.1em); background: white;" src="..\..\svg\8YJmGk2iIg.svg"> is in the set <!-- $\{+,-,*,=  \}$ --> <img style="transform: translateY(0.1em); background: white;" src="..\..\svg\GxosQysFNN.svg">.
+<div align="center"><img style="background: white;" src="https://render.githubusercontent.com/render/math?math="></div> 
+
+, where <!-- $operand1$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=operand1"> is the first binary number, <!-- $operand2$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=operand2">  is the second binary number, and <!-- $operator$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=operator"> is in the set <!-- $\{+,-,*,=  \}$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=%5C%7B%2B%2C-%2C*%2C%3D%20%20%5C%7D">.
 Both operands will always be positive integers when converted from base-**2** to base-**10**.
 All expressions will be valid.
 
