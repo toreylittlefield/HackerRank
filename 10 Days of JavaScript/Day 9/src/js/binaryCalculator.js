@@ -80,7 +80,6 @@ function onButton(e) {
         };
         const lastNaN = isNaN(lastAction)
         const actionNaN = isNaN(action);
-        console.log({lastAction, lastNaN})
         if(lastNaN && actionNaN) {
             return false;
         } else if(action === '=') {
