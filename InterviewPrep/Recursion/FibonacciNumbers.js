@@ -64,7 +64,7 @@ const memoizedFibo = memo(fibonacciMemo);
 // console.log(memoizedFibo(4))
 
 // 0.009ms at 40
-console.log(memoizedFibo(40));
+// console.log(memoizedFibo(70));
 
 // Fibonacci not using recursion just a while loop, which is O(n) time and constant O(1) space complexity
 // it is also much faster than recurison for larger inputs because there is no huge number of calls added to the call stack
@@ -85,4 +85,4 @@ const loopFibonacci = (num) => {
 }
 
 // 0.044ms at 40
-console.log(loopFibonacci(40))
+console.log(loopFibonacci(70))
