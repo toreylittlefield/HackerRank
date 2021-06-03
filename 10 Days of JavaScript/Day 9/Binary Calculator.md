@@ -53,9 +53,8 @@ The `.js` and `.css` files are in different directories, so use the link tag to 
 
 ### Constraints
 
-All expressions in the test dataset are entered in the form <!-- $$operand1 \to operator \to operand2$$ --> 
+All expressions in the test dataset are entered in the form <!-- $operand1 \to operator \to operand2$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=operand1%20%5Cto%20operator%20%5Cto%20operand2">
 
-<div align="center"><img style="background: white;" src="https://render.githubusercontent.com/render/math?math="></div> 
 
 , where <!-- $operand1$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=operand1"> is the first binary number, <!-- $operand2$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=operand2">  is the second binary number, and <!-- $operator$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=operator"> is in the set <!-- $\{+,-,*,=  \}$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=%5C%7B%2B%2C-%2C*%2C%3D%20%20%5C%7D">.
 Both operands will always be positive integers when converted from base-**2** to base-**10**.
@@ -64,31 +63,34 @@ All expressions will be valid.
 ### Explanation
 
 Consider the following sequence of button clicks:
-    <!-- $ 1 \to1 \to 1 \to 0 \to1 \to + \to 1 \to 0 \to 0 \to 0 \to 0$ --> <img style="transform: translateY(0.1em); background: white;" src="..\..\svg\RLzAQ5CIvB.svg">
-Before pressing the <!-- $=$ --> <img style="transform: translateY(0.1em); background: white;" src="..\..\svg\KJiEgfCjn2.svg"> button, the result div looks like this:
+    <!-- $ 1 \to1 \to 1 \to 0 \to1 \to + \to 1 \to 0 \to 0 \to 0 \to 0$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=1%20%5Cto1%20%5Cto%201%20%5Cto%200%20%5Cto1%20%5Cto%20%2B%20%5Cto%201%20%5Cto%200%20%5Cto%200%20%5Cto%200%20%5Cto%200">
+Before pressing the <!-- $=$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=%3D"> button, the result div looks like this:
 
 <img src="https://s3.amazonaws.com/hr-challenge-images/18103/1456666017-1857ab934b-ScreenShot2016-02-28at6.55.52PM.png" alt="Binary Calculator Example Input" style="height: 60px; width:120;"/>
 
-After pressing the <!-- $=$ --> <img style="transform: translateY(0.1em); background: white;" src="..\..\svg\flhHRPwTOc.svg"> button to evaluate our expression, the result div looks like this:
+After pressing the <!-- $=$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=%3D">button to evaluate our expression, the result div looks like this:
 
 <img src="https://s3.amazonaws.com/hr-challenge-images/18103/1456666141-da2d0c1331-ScreenShot2016-02-28at6.58.38PM.png" alt="Binary Calculator Example Output" style="height: 60px; width:120;"/>
 
 
-Notice that <!-- $(11011)_2 = (27)_2, (1000)_2 = (8)_{10} $ --> <img style="transform: translateY(0.1em); background: white;" src="..\..\svg\3CHeDSKEAc.svg"> and <!-- $(100011)_2 = (35)_{10}$ --> <img style="transform: translateY(0.1em); background: white;" src="..\..\svg\QL1MVWyK9Z.svg">, so our calculator evaluated the expression correctly.
+Notice that <!-- $(11011)_2 = (27)_2, (1000)_2 = (8)_{10} $ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=(11011)_2%20%3D%20(27)_2%2C%20(1000)_2%20%3D%20(8)_%7B10%7D">  and <!-- $(100011)_2 = (35)_{10}$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=(100011)_2%20%3D%20(35)_%7B10%7D"> , so our calculator evaluated the expression correctly.
 
 Now, let's consider our next sequence of button clicks as:
- <!-- $ 0 \to 1 \to * \to 1 \to 1 \to 1 =$ --> <img style="transform: translateY(0.1em); background: white;" src="..\..\svg\uN4OfxecHF.svg">
-Before pressing the <!-- $=$ --> <img style="transform: translateY(0.1em); background: white;" src="..\..\svg\9HZrLeXons.svg"> button, the result div looks like this:
+ <!-- $ 0 \to 1 \to * \to 1 \to 1 \to 1 =$ --> 
+ <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=0%20%5Cto%201%20%5Cto%20*%20%5Cto%201%20%5Cto%201%20%5Cto%201%20%3D"> 
+
+Before pressing the <!-- $=$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=%3D">button, the result div looks like this:
 
 <img src="https://s3.amazonaws.com/hr-challenge-images/18103/1456666566-39a02c93ac-ScreenShot2016-02-28at7.04.23PM.png" alt="Binary Calculator Example Input Multiple" style="height: 60px; width:120;"/>
 
 
-After pressing the <!-- $=$ --> <img style="transform: translateY(0.1em); background: white;" src="..\..\svg\2udFM8Vb4j.svg"> button to evaluate our expression, the result div looks like this:
+After pressing the <!-- $=$ --> <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=%3D"> button to evaluate our expression, the result div looks like this:
 
 <img src="https://s3.amazonaws.com/hr-challenge-images/18103/1456666602-bb107fb013-ScreenShot2016-02-28at7.05.26PM.png" alt="Binary Calculator Example Output Multiple" style="height: 60px; width:120;"/>
 
 Consider the next sequence of button clicks as:
- <!-- $ C \to 1 \to 1 $ --> <img style="transform: translateY(0.1em); background: white;" src="..\..\svg\nDpxwbkUE0.svg">
+ <!-- $ C \to 1 \to 1 $ --> 
+ <img style="transform: translateY(0.1em); background: white;" src="https://render.githubusercontent.com/render/math?math=C%20%5Cto%201%20%5Cto%201">
 The result div looks like this:
 
 <img src="https://s3.amazonaws.com/hr-challenge-images/18103/1456667223-af168e6fc7-ScreenShot2016-02-28at7.16.38PM.png" alt="Binary Calculator Example Clear" style="height: 60px; width:120;"/>
