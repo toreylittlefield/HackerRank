@@ -49,19 +49,23 @@ function onButton(e) {
                 const operator = ops.pop();
                 switch(operator) {
                     case '+': {
-                        result += (firstNum + el)
+                        result += (firstNum + el);
+                        tempNum.push(result);
                         break;
                     };
                     case '-': {
                         result += (firstNum - el)
+                        tempNum.push(result);
                         break;
                     };
                     case '*': {
-                        result += (firstNum * el)
+                        result += (firstNum * el);
+                        tempNum.push(result);
                         break;
                     };
                     case '/': {
-                        result += (firstNum / el)
+                        result += (firstNum / el);
+                        tempNum.push(result);
                         break;
                     };
                 };
