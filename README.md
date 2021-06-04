@@ -28,8 +28,9 @@ Working my way through [Interview Preparation Kit](https://www.hackerrank.com/in
 ---
 
 ### Follow Me On Hacker Rank 👨‍💻
-
-<img height=40 src="https://avatars.githubusercontent.com/u/52614742?v=4" alt="Bio Pic Torey Littlefield" style="transform: translateY(0.1em); background: white; pointer-events:none; float:left; margin-right:10px;">
+<div>
+<img height=40  src="https://avatars.githubusercontent.com/u/52614742?v=4" alt="Bio Pic Torey Littlefield" style="transform: translateY(0.1em); background: white; pointer-events:none; float:left; margin-right:10px;">
 
 [Torey Littlefield](https://www.hackerrank.com/toreylittlefield) 
+</div>
 
