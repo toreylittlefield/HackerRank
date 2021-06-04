@@ -10,16 +10,18 @@ Working my way through [Interview Preparation Kit](https://www.hackerrank.com/in
 [See Basic Problem Solving Certification](https://www.hackerrank.com/certificates/167138db4708)
 
 <a href="https://www.hackerrank.com/certificates/167138db4708" rel="nofollow">
-<img src="https://raw.githubusercontent.com/toreylittlefield/HackerRank/d2053a232970d555dccc798c31b5c2a16c553bfd/Badges%20and%20Images/Basic%20Problem%20Solving%20Hacker%20Rank%20.png" style="transform: translateY(0.1em); background: white; height: 120px;">
+<img height=120p src="https://raw.githubusercontent.com/toreylittlefield/HackerRank/d2053a232970d555dccc798c31b5c2a16c553bfd/Badges%20and%20Images/Basic%20Problem%20Solving%20Hacker%20Rank%20.png" style="transform: translateY(0.1em); background: white;">
 
-<img src="https://raw.githubusercontent.com/toreylittlefield/HackerRank/master/Badges%20and%20Images/problem_solving_basic_skill.png" style="transform: translateY(0.1em); background: white; height: 120px;">
+<img height=120 src="https://raw.githubusercontent.com/toreylittlefield/HackerRank/master/Badges%20and%20Images/problem_solving_basic_skill.png" style="transform: translateY(0.1em); background: white;">
 </a>
 
 ###### Badges
 
-<img src="https://raw.githubusercontent.com/toreylittlefield/HackerRank/master/Badges%20and%20Images/problem_solving_5_star.png" alt="Problem Solving Badge 5 Star" style="transform: translateY(0.1em); background: white; height: 80px;">
+<div style="pointer-events:none; display:flex; flex-wrap:row;">
+<img  height=80 src="https://raw.githubusercontent.com/toreylittlefield/HackerRank/master/Badges%20and%20Images/problem_solving_5_star.png" alt="Problem Solving Badge 5 Star" style="transform: translateY(0.1em); background: white; height: 80px;">
 
-<img src="https://raw.githubusercontent.com/toreylittlefield/HackerRank/master/Badges%20and%20Images/10_days_of_javascript_5_star.png" alt="10 Days Of JavaScript" style="transform: translateY(0.1em); background: white; height: 80px;">
+<img height=80 src="https://raw.githubusercontent.com/toreylittlefield/HackerRank/master/Badges%20and%20Images/10_days_of_javascript_5_star.png" alt="10 Days Of JavaScript" style="transform: translateY(0.1em); background: white;">
+</div>
 
 
 
