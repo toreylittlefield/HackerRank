@@ -23,14 +23,14 @@ function quartiles(arr) {
     // Write your code here
     const len = arr.length;
 
-    // our left & right quartile arrays
-    let left = [];
-    let right = [];
+    // our left & right & median values to return
+    let left = 0;
+    let right = 0;
+    let median = 0;
 
     // median index position
     let medianPos = Math.floor(len / 2);
 
-    let median = 0;
 
     // sort the arr
     arr.sort((a,b) => a - b);
