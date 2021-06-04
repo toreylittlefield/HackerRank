@@ -18,7 +18,7 @@ Working my way through [Interview Preparation Kit](https://www.hackerrank.com/in
 ###### [See JavaScript Basic Certification](https://www.hackerrank.com/certificates/d106f75af771)
 
 <a href="https://www.hackerrank.com/certificates/d106f75af771" rel="nofollow">
-<img height=120p alt="JavaScript Basic Badge" src="https://raw.githubusercontent.com/toreylittlefield/HackerRank/master/Badges%20and%20Images/JavaScript%20Basic%20Certification%20Hacker%20Rank.png" style="transform: translateY(0.1em); background: white;">
+<img height=120 alt="JavaScript Basic Badge" src="https://raw.githubusercontent.com/toreylittlefield/HackerRank/master/Badges%20and%20Images/JavaScript%20Basic%20Certification%20Hacker%20Rank.png" style="transform: translateY(0.1em); background: white;">
 
 <img height=120 alt="JavaScript Basic Certification" src="https://raw.githubusercontent.com/toreylittlefield/HackerRank/master/Badges%20and%20Images/JavaScript_basic_skill.png" style="transform: translateY(0.1em); background: white;">
 </a>
