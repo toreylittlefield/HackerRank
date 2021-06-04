@@ -10,7 +10,7 @@ Working my way through [Interview Preparation Kit](https://www.hackerrank.com/in
 ###### [See Basic Problem Solving Certification](https://www.hackerrank.com/certificates/167138db4708)
 
 <a href="https://www.hackerrank.com/certificates/167138db4708" rel="nofollow">
-<img height=120p alt="Problem Solving Basic Badge"  src="https://raw.githubusercontent.com/toreylittlefield/HackerRank/d2053a232970d555dccc798c31b5c2a16c553bfd/Badges%20and%20Images/Basic%20Problem%20Solving%20Hacker%20Rank%20.png" style="transform: translateY(0.1em); background: white;">
+<img height=120 alt="Problem Solving Basic Badge"  src="https://raw.githubusercontent.com/toreylittlefield/HackerRank/d2053a232970d555dccc798c31b5c2a16c553bfd/Badges%20and%20Images/Basic%20Problem%20Solving%20Hacker%20Rank%20.png" style="transform: translateY(0.1em); background: white;">
 
 <img height=120 alt="Problem Solving Basic Certificate"  src="https://raw.githubusercontent.com/toreylittlefield/HackerRank/master/Badges%20and%20Images/problem_solving_basic_skill.png" style="transform: translateY(0.1em); background: white;">
 </a>
@@ -21,6 +21,14 @@ Working my way through [Interview Preparation Kit](https://www.hackerrank.com/in
 <img height=120p alt="JavaScript Basic Badge" src="https://raw.githubusercontent.com/toreylittlefield/HackerRank/master/Badges%20and%20Images/JavaScript%20Basic%20Certification%20Hacker%20Rank.png" style="transform: translateY(0.1em); background: white;">
 
 <img height=120 alt="JavaScript Basic Certification" src="https://raw.githubusercontent.com/toreylittlefield/HackerRank/master/Badges%20and%20Images/JavaScript_basic_skill.png" style="transform: translateY(0.1em); background: white;">
+</a>
+
+###### [See Basic SQL Certification](https://www.hackerrank.com/certificates/068c2d25d62d)
+
+<a href="https://www.hackerrank.com/certificates/068c2d25d62d" rel="nofollow">
+<img height=120 alt="SQL Basic Badge"  src="https://raw.githubusercontent.com/toreylittlefield/HackerRank/master/Badges%20and%20Images/Basic%20SQL%20Hacker%20Rank%20.png" style="transform: translateY(0.1em); background: white;">
+
+<img height=120 alt="SQL Basic Certificate"  src="https://raw.githubusercontent.com/toreylittlefield/HackerRank/bcba8d70047aaa412ec0bd7e3b20433a69b859e7/Badges%20and%20Images/SQL_basic_skill.png" style="transform: translateY(0.1em); background: white;">
 </a>
 
 ##### Badges
