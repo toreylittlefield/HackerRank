@@ -28,10 +28,13 @@ Working my way through [Interview Preparation Kit](https://www.hackerrank.com/in
 ---
 
 ### Follow Me On Hacker Rank 👨‍💻
-<div>
-    <a href="https://www.hackerrank.com/toreylittlefield" rel="nofollow">
-        <img height=40  src="https://avatars.githubusercontent.com/u/52614742?v=4" alt="Bio Pic Torey Littlefield" style="transform: translateY(0.1em); background: white; pointer-events:none; float:left; margin-right:10px;">
-        <span>👉 Torey Littlefield</span>
+<div style="margin-bottom: 20px">
+    <a style="margin-right: 10px;" href="https://www.hackerrank.com/toreylittlefield" rel="nofollow">
+        👉 Torey Littlefield
     </a>
 </div>
+
+<img height=40  src="https://avatars.githubusercontent.com/u/52614742?v=4" alt="Bio Pic Torey Littlefield" style="transform: translateY(0.1e; background: white; pointer-events:none;" >
+
+
 
