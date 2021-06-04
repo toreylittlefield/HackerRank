@@ -31,7 +31,7 @@ Working my way through [Interview Preparation Kit](https://www.hackerrank.com/in
 <div>
     <div style="margin-bottom: 20px">
         👉
-        <a style="margin-right: 10px;" href="https://www.hackerrank.    com/toreylittlefield" rel="nofollow">
+        <a style="margin-right: 10px;" href="https://www.hackerrank.com/toreylittlefield" rel="nofollow">
             Torey Littlefield
         </a>
         </br>
