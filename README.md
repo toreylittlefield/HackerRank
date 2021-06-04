@@ -31,7 +31,7 @@ Working my way through [Interview Preparation Kit](https://www.hackerrank.com/in
 <div>
     <a href="https://www.hackerrank.com/toreylittlefield" rel="nofollow">
         <img height=40  src="https://avatars.githubusercontent.com/u/52614742?v=4" alt="Bio Pic Torey Littlefield" style="transform: translateY(0.1em); background: white; pointer-events:none; float:left; margin-right:10px;">
-        Torey Littlefield
+        <span>👉 Torey Littlefield</span>
     </a>
 </div>
 
