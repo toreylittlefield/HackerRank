@@ -15,7 +15,7 @@ Working my way through [Interview Preparation Kit](https://www.hackerrank.com/in
 <img height=120 src="https://raw.githubusercontent.com/toreylittlefield/HackerRank/master/Badges%20and%20Images/problem_solving_basic_skill.png" style="transform: translateY(0.1em); background: white;">
 </a>
 
-###### Badges
+##### Badges
 
 <div style="pointer-events:none; display:flex; flex-wrap:row;">
 <img  height=80 src="https://raw.githubusercontent.com/toreylittlefield/HackerRank/master/Badges%20and%20Images/problem_solving_5_star.png" alt="Problem Solving Badge 5 Star" style="transform: translateY(0.1em); background: white; height: 80px; pointer-events:none;">
