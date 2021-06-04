@@ -18,8 +18,10 @@ const p = [4, 3, 5, 1, 2]
 function permutationEquation(p) {
     // Write your code here
     return p.reduce((acc, cur, idx) => {
-      acc[p[cur - 1] - 1] = idx + 1;
-      return acc;
+        const x = idx + 1;
+        const pY = p[cur - 1];
+        acc[pY - 1] = x;
+         return acc;
     } , []);
 };
 
