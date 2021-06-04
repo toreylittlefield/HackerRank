@@ -34,7 +34,7 @@ Working my way through [Interview Preparation Kit](https://www.hackerrank.com/in
     </a>
 </div>
 
-<img height=40  src="https://avatars.githubusercontent.com/u/52614742?v=4" alt="Bio Pic Torey Littlefield" style="transform: translateY(0.1e; background: white; pointer-events:none;" >
+<img height=40  src="https://avatars.githubusercontent.com/u/52614742?v=4" alt="Bio Pic Torey Littlefield" style="transform: translateY(0.1e; background: white; pointer-events:none; margin-top: 10px" >
 
 
 
