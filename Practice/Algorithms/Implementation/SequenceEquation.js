@@ -21,6 +21,7 @@ function permutationEquation(p) {
         const x = idx + 1;
         const pY = p[cur - 1];
         acc[pY - 1] = x;
+        // acc is the array satisfying the condition p(p(y)) = x;
          return acc;
     } , []);
 };
