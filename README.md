@@ -7,6 +7,7 @@ Working my way through [Interview Preparation Kit](https://www.hackerrank.com/in
 
 ##### Verified Skills
 
+<div style="display: flex; flex-wrap:wrap; align-items:center">
 <img height=60 alt="JavaScript JS Icon"  src="https://raw.githubusercontent.com/toreylittlefield/HackerRank/master/Badges%20and%20Images/JS%20Icon.png" style="transform: translateY(0.1em); background: white;">
 
 <img height=60 alt="SQL Database Icon"  src="https://raw.githubusercontent.com/toreylittlefield/HackerRank/master/Badges%20and%20Images/SQL%20Icon.png" style="transform: translateY(0.1em); background: white;">
@@ -15,6 +16,8 @@ Working my way through [Interview Preparation Kit](https://www.hackerrank.com/in
 <p></p>
 
 <img height=60 alt="Node JS Icon"  src="https://raw.githubusercontent.com/toreylittlefield/HackerRank/master/Badges%20and%20Images/Node%20JS%20Logo.png" style="transform: translateY(0.1em); background: white;">
+
+</div>
 
 
 
