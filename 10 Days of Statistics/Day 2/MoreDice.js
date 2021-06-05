@@ -28,9 +28,6 @@ function calcProb(dice, k) {
         diceFaces.forEach((dice, idx) => {
             dice.forEach((dc1, jdx) => {
                 const nextDie = diceFaces[idx + 1];
-                console.log({
-                    nextDie
-                })
                 if (!nextDie) return;
                 let nextDieLength = nextDie.length;
                 while (nextDieLength) {
@@ -55,17 +52,22 @@ function calcProb(dice, k) {
         });
     };
 
-    const totalP = Object.keys(comboMap).reduce((acc, key, idx) => {
-        const val = comboMap[key];
-        if (key <= k) {
-            acc += Number(val.p);
-        };
-        return acc;
-    }, 0);
+    // const totalP = Object.keys(comboMap).reduce((acc, key, idx) => {
+    //     const val = comboMap[key];
+    //     if (key <= k) {
+    //         acc += Number(val.p);
+    //     };
+    //     return acc;
+    // }, 0);
 
-    console.log(totalP)
+    const findSum = ((comboMap[k].pairs.filter( (pair, idx) => {
+        const [dc1, dc2] = pair;
+        return dc1 !== dc2
+    }).length)/combinations * 100).toFixed(2);
 
-    return totalP;
+    console.log(findSum)
+
+    return findSum;
 }
 
 console.log(calcProb(dice, k))
