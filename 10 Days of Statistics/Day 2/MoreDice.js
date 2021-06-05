@@ -1,5 +1,5 @@
 /*
- * Link: https://www.hackerrank.com/challenges/s10-mcq-1/problem
+ * Link: https://www.hackerrank.com/challenges/s10-mcq-2/problem
  * Type: 10 Days of Statistics
  * Difficulty: --
  * Name: Day 2: More Dice
