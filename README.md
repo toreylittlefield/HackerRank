@@ -7,6 +7,17 @@ Working my way through [Interview Preparation Kit](https://www.hackerrank.com/in
 
 ##### Verified Skills
 
+<img height=60 alt="JavaScript JS Icon"  src="https://raw.githubusercontent.com/toreylittlefield/HackerRank/master/Badges%20and%20Images/JS%20Icon.png" style="transform: translateY(0.1em); background: white;">
+
+<img height=60 alt="SQL Database Icon"  src="https://raw.githubusercontent.com/toreylittlefield/HackerRank/master/Badges%20and%20Images/SQL%20Icon.png" style="transform: translateY(0.1em); background: white;">
+
+<img height=60 alt="React JS Icon"  src="https://raw.githubusercontent.com/toreylittlefield/HackerRank/master/Badges%20and%20Images/React%20JS%20Logo.png" style="transform: translateY(0.1em); background: white;">
+<p></p>
+
+<img height=60 alt="Node JS Icon"  src="https://raw.githubusercontent.com/toreylittlefield/HackerRank/master/Badges%20and%20Images/Node%20JS%20Logo.png" style="transform: translateY(0.1em); background: white;">
+
+
+
 ###### [See Basic Problem Solving Certification](https://www.hackerrank.com/certificates/167138db4708)
 
 <a href="https://www.hackerrank.com/certificates/167138db4708" rel="nofollow">
@@ -21,6 +32,14 @@ Working my way through [Interview Preparation Kit](https://www.hackerrank.com/in
 <img height=120 alt="JavaScript Basic Badge" src="https://raw.githubusercontent.com/toreylittlefield/HackerRank/master/Badges%20and%20Images/JavaScript%20Basic%20Certification%20Hacker%20Rank.png" style="transform: translateY(0.1em); background: white;">
 
 <img height=120 alt="JavaScript Basic Certification" src="https://raw.githubusercontent.com/toreylittlefield/HackerRank/master/Badges%20and%20Images/JavaScript_basic_skill.png" style="transform: translateY(0.1em); background: white;">
+</a>
+
+###### [See Basic React Certification](https://www.hackerrank.com/certificates/671857a9335c)
+
+<a href="https://www.hackerrank.com/certificates/671857a9335c" rel="nofollow">
+<img height=120 alt="React Basic Badge"  src="https://raw.githubusercontent.com/toreylittlefield/HackerRank/master/Badges%20and%20Images/React%20Basic%20Hacker%20Rank%20.png" style="transform: translateY(0.1em); background: white;">
+
+<img height=120 alt="React Basic Certificate"  src="https://raw.githubusercontent.com/toreylittlefield/HackerRank/master/Badges%20and%20Images/React_basic_skill.png" style="transform: translateY(0.1em); background: white;">
 </a>
 
 ###### [See Basic SQL Certification](https://www.hackerrank.com/certificates/068c2d25d62d)
