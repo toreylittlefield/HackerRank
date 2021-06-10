@@ -34,8 +34,15 @@ const input = `1 3
 
 function processData(input) {
     //Enter your code here
+    const [numDem, trials] = input.split('\n');
+    const [numerator, demoninator] = numDem.split(' ');
+    const probFail = numerator/demoninator;
+    const probSuccess = 1 - probFail;
 
+    let results = (1 - probSuccess**(trials)).toFixed(3);
 
+    console.log(results);
+    return results;
 }
 
 console.log(processData(input))
