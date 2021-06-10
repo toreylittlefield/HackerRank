@@ -28,7 +28,7 @@ Print a single line denoting the answer, rounded to a scale of 3 decimal places.
 // Binomial Distribution --> bdis(x,n,p) = ((n!)/(x!(n-x)!) * p^x * q^(n-x)
 // Negative Binomial Distribution --> negbdis*(x,n,p) = ((n - 1!)/((x - 1)!((n-1)-(x-1))!) * p^x * q^(n-x)
 
-// Expect 0.066
+// Expect 0.868
 const input = `1 3 
 5`
 
