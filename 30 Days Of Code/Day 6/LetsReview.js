@@ -33,10 +33,31 @@ Hce akr
 Rn ak
  */
 
-const input = `Hacker`
+const input = `2
+Hacker
+Rank`
 
 function processData(input) {
     //Enter your code here
-} 
+    const S = input.split('\n').slice(1);
+
+    let results = [...S].map(evenOddString);
+
+    results.forEach(val => console.log(val))
+    return results;
+
+    function evenOddString(S) {
+        let evenS = '';
+        let oddS = '';
+        [...S].map((character, idx) => {
+            if(idx % 2 === 0) {
+                evenS += character;
+            } else {
+                oddS += character;
+            }
+        });
+        return `${evenS} ${oddS}`
+    };
+}
 
 console.log(processData(input))
