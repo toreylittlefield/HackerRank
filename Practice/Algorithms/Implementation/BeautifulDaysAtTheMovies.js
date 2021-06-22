@@ -26,21 +26,19 @@ function beautifulDays(i, j, k) {
     // Write your code here
     let days = 0;
     for(i; i <= j; i++) {
-        if(evalInts(i,k) > 0 ) {
-            days++;
-        }
-    }
+        evalInts(i,k) && days++;
+    };
     return days;
     function evalInts(i, k) {
         const revI = reversedNum(i);
-        if(Number.isInteger((i - revI)  / k)) {
-            return 1;
-        }
-        return -1;
+        return checkInteger(i, revI, k)
     }
     function reversedNum(num) {
         const string = num.toString();
         const reverse = [...string].reverse().reduce((cur, val) => cur + val, '');
         return parseFloat(reverse) * Math.sign(num);
-    } 
+    };
+    function checkInteger(i, revI, k) {
+        return Number.isInteger((i - revI)  / k)
+    }
 }
