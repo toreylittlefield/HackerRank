@@ -2,7 +2,7 @@
  * Link: https://www.hackerrank.com/challenges/30-binary-numbers/problem
  * Type: 30 Days Of Code
  * Difficulty: Easy
- * Name: Day 10: Binary Numbers
+ * Name: Day 11: 2D Arrays
  */
 
 
