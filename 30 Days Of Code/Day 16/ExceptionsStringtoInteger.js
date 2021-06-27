@@ -1,21 +1,18 @@
 /*
- * Link: https://www.hackerrank.com/challenges/30-exceptions-string-to-integer/problem
+ * Link: https://www.hackerrank.com/challenges/30-more-exceptions//problem
  * Type: 30 Days Of Code
  * Difficulty: Easy
- * Name: Day 16: Exceptions - String to Integer
+ * Name: Day 17: More Exceptions
  */
 
-this.insert = function (head, data) {
-    //complete this method
-    const newNode = new Node(data);
-    if (!head) {
-        head = newNode;
-    } else {
-        let curNode = head;
-        while (curNode.next) {
-            curNode = curNode.next;
+//Write your code here
+class Calculator {
+    power(n, p) {
+
+        if (n < 0 || p < 0) {
+            throw ('n and p should be non-negative')
         }
-        curNode.next = newNode;
+        return n ** p
+
     }
-    return head;
-};
+}
