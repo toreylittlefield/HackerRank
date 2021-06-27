@@ -1,5 +1,5 @@
 /*
- * Link: https://www.hackerrank.com/challenges/30-binary-numbers/problem
+ * Link: https://www.hackerrank.com/challenges/30-2d-arrays/problem
  * Type: 30 Days Of Code
  * Difficulty: Easy
  * Name: Day 11: 2D Arrays
