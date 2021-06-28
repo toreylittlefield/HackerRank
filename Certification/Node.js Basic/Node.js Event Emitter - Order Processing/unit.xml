@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="0.1630" tests="6" failures="0">
+  <testsuite name="Root Suite" timestamp="2021-06-28T05:01:57" tests="0" time="0.0000" failures="0">
+  </testsuite>
+  <testsuite name="order_processor" timestamp="2021-06-28T05:01:57" tests="6" file="C:\Users\T\Desktop\Testing Developement\HackerRank\Certification\Node.js Basic\Node.js Event Emitter - Order Processing\test\index.spec.js" time="0.1630" failures="0">
+    <testcase name="order_processor Should have all the method placeOrder in the class" time="0.0160" classname="Should have all the method placeOrder in the class">
+    </testcase>
+    <testcase name="order_processor Should emit the event PROCESSING_STARTED when placeOrder is called" time="0.0320" classname="Should emit the event PROCESSING_STARTED when placeOrder is called">
+    </testcase>
+    <testcase name="order_processor Should emit the PROCESSING_FAILED if line items are empty" time="0.0270" classname="Should emit the PROCESSING_FAILED if line items are empty">
+    </testcase>
+    <testcase name="order_processor Should emit the PROCESSING_FAILED if any of the line items do not meet the stock requirements" time="0.0290" classname="Should emit the PROCESSING_FAILED if any of the line items do not meet the stock requirements">
+    </testcase>
+    <testcase name="order_processor Should emit the PROCESSING_SUCCESS if all the validations pass" time="0.0310" classname="Should emit the PROCESSING_SUCCESS if all the validations pass">
+    </testcase>
+    <testcase name="order_processor Should emit the PROCESSING_SUCCESS if all the validations pass for multiple orders" time="0.0280" classname="Should emit the PROCESSING_SUCCESS if all the validations pass for multiple orders">
+    </testcase>
+  </testsuite>
+</testsuites>
